@@ -1,0 +1,203 @@
+{
+  "projeto": "Conexão RP",
+  "descricao": "Guarda-roupa completo e funcional focado em performance mobile e integração sem conflitos de malha.",
+  "orcamento": {
+    "valor_final": "R$ 220,00",
+    "link_pagamento": "https://nubank.com.br/cobrar/seu-link-aqui",
+    "pago": false,
+    "link_download": "https://drive.google.com/drive/folders/seu-link-aqui",
+    "sinal_pago": "R$ 100,00",
+    "valor_restante": "R$ 120,00"
+  },
+  "skins": [
+    {
+      "id": "skin_base",
+      "titulo": "Skin Base",
+      "grupos": [
+        {
+          "id": "rostos_cabelos",
+          "nome": "👩 Rostos & Cabelos",
+          "exclusive": true,
+          "itens": [
+            {
+              "id": "rosto_1",
+              "nome": "ROSTO 1",
+              "texturas": {
+                "rosto1_t1": "#888888",
+                "rosto1_t2": "#888888",
+                "rosto1_t3": "#888888"
+              },
+              "obs": "Base",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            },
+            {
+              "id": "rosto_2",
+              "nome": "ROSTO 2",
+              "texturas": {
+                "rosto2_t1": "#888888",
+                "rosto2_t2": "#888888",
+                "rosto2_t3": "#888888"
+              },
+              "obs": "Base",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            },
+            {
+              "id": "cabelo_1",
+              "nome": "CABELO 1",
+              "texturas": {
+                "cabelo1_t1": "#888888",
+                "cabelo1_t2": "#888888",
+                "cabelo1_t3": "#888888"
+              },
+              "obs": "3 Cores",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            },
+            {
+              "id": "cabelo_2",
+              "nome": "CABELO 2",
+              "texturas": {
+                "cabelo2_t1": "#888888",
+                "cabelo2_t2": "#888888",
+                "cabelo2_t3": "#888888"
+              },
+              "obs": "3 Cores",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            }
+          ]
+        },
+        {
+          "id": "parte_superior",
+          "nome": "👕 Parte Superior",
+          "exclusive": true,
+          "itens": [
+            {
+              "id": "camiseta",
+              "nome": "CAMISETA",
+              "texturas": {
+                "camisa_t1": "#888888",
+                "camisa_t2": "#888888"
+              },
+              "obs": "Básica",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            },
+            {
+              "id": "jaqueta",
+              "nome": "JAQUETA",
+              "texturas": {
+                "jaqueta_t1": "#888888",
+                "jaqueta_t2": "#888888"
+              },
+              "obs": "Sobreposição",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            }
+          ]
+        },
+        {
+          "id": "parte_inferior",
+          "nome": "👖 Parte Inferior",
+          "exclusive": true,
+          "itens": [
+            {
+              "id": "calça",
+              "nome": "CALÇA",
+              "texturas": {
+                "calca_t1": "#888888",
+                "calca_t2": "#888888"
+              },
+              "obs": "Padrão",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            },
+            {
+              "id": "short",
+              "nome": "SHORT",
+              "texturas": {
+                "short_t1": "#888888",
+                "short_t2": "#888888"
+              },
+              "obs": "Verão",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            },
+            {
+              "id": "saia",
+              "nome": "SAIA",
+              "texturas": {
+                "saia_t1": "#888888",
+                "saia_t2": "#888888"
+              },
+              "obs": "Casual",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            }
+          ]
+        },
+        {
+          "id": "calçados",
+          "nome": "👟 Calçados",
+          "exclusive": true,
+          "itens": [
+            {
+              "id": "tênis",
+              "nome": "TÊNIS",
+              "texturas": {
+                "tenis_t1": "#888888",
+                "tenis_t2": "#888888"
+              },
+              "obs": "Fechado",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            },
+            {
+              "id": "sandália__chinelo",
+              "nome": "SANDÁLIA / CHINELO",
+              "texturas": {
+                "sandalia_t1": "#888888",
+                "sandalia_t2": "#888888"
+              },
+              "obs": "Aberto",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            }
+          ]
+        },
+        {
+          "id": "acessórios",
+          "nome": "🧢 Acessórios",
+          "exclusive": true,
+          "itens": [
+            {
+              "id": "boné_ou_mochila",
+              "nome": "BONÉ OU MOCHILA",
+              "texturas": {
+                "acessorio_t1": "#888888",
+                "acessorio_t2": "#888888"
+              },
+              "obs": "A definir",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
