@@ -47,11 +47,15 @@ def gerar_html_painel(skin_data):
         '''
     return html
 
-def get_pricing_html(skin_data):
-    if not skin_data or 'orcamento' not in skin_data:
+def get_pricing_html(skin_data, global_data=None):
+    # Usa o orcamento do skin_data (se existir) senao usa o global
+    orcamento = skin_data.get('orcamento') if skin_data else None
+    if not orcamento and global_data:
+        orcamento = global_data.get('orcamento')
+        
+    if not orcamento:
         return ""
-    
-    orcamento = skin_data['orcamento']
+
     valor_str = orcamento.get('valor_final', 'R$ 0,00').replace('R$ ', '')
     try:
         reais, centavos = valor_str.split(',')
@@ -129,8 +133,8 @@ def gerar_html(dados):
     html_masc = gerar_html_painel(skin_masc).replace("`", "\\`") if skin_masc else ""
     # html_fem = gerar_html_painel(skin_fem).replace("`", "\\`") if skin_fem else ""
     
-    pricing_masc = get_pricing_html(skin_masc).replace("`", "\\`") if skin_masc else ""
-    pricing_fem = get_pricing_html(skin_fem).replace("`", "\\`") if skin_fem else ""
+    pricing_masc = get_pricing_html(skin_masc, dados).replace("`", "\\`") if skin_masc else ""
+    pricing_fem = get_pricing_html(skin_fem, dados).replace("`", "\\`") if skin_fem else ""
     
 
     def calc_prog(skin):

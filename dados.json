@@ -1,726 +1,201 @@
 {
-  "projeto": "Sistema de Skin Modular .DFF",
-  "descricao": "Projeto sob medida para o seu servidor. Peças independentes, otimizadas para engine mobile e integradas sem conflito de malha.",
+  "projeto": "Conexão RP",
+  "descricao": "Guarda-roupa completo e funcional focado em performance mobile e integração sem conflitos de malha.",
+  "orcamento": {
+    "valor_final": "R$ 220,00",
+    "link_pagamento": "https://nubank.com.br/cobrar/seu-link-aqui",
+    "pago": false,
+    "link_download": "https://drive.google.com/drive/folders/seu-link-aqui",
+    "sinal_pago": "R$ 100,00",
+    "valor_restante": "R$ 120,00"
+  },
   "skins": [
     {
       "id": "masculina",
-      "titulo": "♂️ Skin Masculina",
-      "orcamento": {
-        "valor_final": "R$ 250,00",
-        "link_pagamento": "https://nubank.com.br/cobrar/3avuif/6ab1c5e3-0bc8-47c2-b68a-21f377e624ef",
-        "pago": true,
-        "link_download": "https://drive.google.com/drive/folders/1BMJtawQCqs_USxhxFuygb45JCCqwTc4X?usp=sharing"
-      },
+      "titulo": "Skin Base",
       "grupos": [
         {
-          "titulo": "Corpo Base (3 tons de pele)",
-          "emoji": "👤",
-          "resumo_texturas": "Malha Base",
+          "id": "rostos_cabelos",
+          "exclusive": true,
           "itens": [
             {
-              "id": "00",
-              "nome": "FACE0",
+              "id": "rosto_1",
+              "nome": "ROSTO 1",
               "texturas": {
-                "mface0a": "#aaaaaa",
-                "mface0b": "#aaaaaa",
-                "mface0c": "#aaaaaa"
+                "rosto1_t1": "#888888",
+                "rosto1_t2": "#888888",
+                "rosto1_t3": "#888888"
               },
               "obs": "Base",
-              "concluido": true
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
             },
             {
-              "id": "01",
-              "nome": "BRACOS (COMPLETO)",
+              "id": "rosto_2",
+              "nome": "ROSTO 2",
               "texturas": {
-                "mbracos1a": "#aaaaaa",
-                "mbracos1b": "#aaaaaa",
-                "mbracos1c": "#aaaaaa"
-              },
-              "obs": "Sem camisa",
-              "concluido": true
-            },
-            {
-              "id": "02",
-              "nome": "BRACOS (PRA CAMISETA)",
-              "texturas": {
-                "mbracos1a": "#aaaaaa",
-                "mbracos1b": "#aaaaaa",
-                "mbracos1c": "#aaaaaa"
-              },
-              "obs": "Corte ombro",
-              "concluido": true
-            },
-            {
-              "id": "03",
-              "nome": "PERNAS (COMPLETO)",
-              "texturas": {
-                "mpernas1a": "#aaaaaa",
-                "mpernas1b": "#aaaaaa",
-                "mpernas1c": "#aaaaaa"
+                "rosto2_t1": "#888888",
+                "rosto2_t2": "#888888",
+                "rosto2_t3": "#888888"
               },
               "obs": "Base",
-              "concluido": true
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
             },
             {
-              "id": "04",
-              "nome": "CUECA",
-              "texturas": {
-                "mcueca1": "#aaaaaa"
-              },
-              "obs": "Base",
-              "concluido": true
-            },
-            {
-              "id": "06",
-              "nome": "BRACOS (PRO CASACO)",
-              "texturas": {
-                "mbracos1a": "#aaaaaa",
-                "mbracos1b": "#aaaaaa",
-                "mbracos1c": "#aaaaaa"
-              },
-              "obs": "Apenas mãos",
-              "concluido": true
-            },
-            {
-              "id": "08",
-              "nome": "PERNAS (PRA BERMUDA)",
-              "texturas": {
-                "mpernas1a": "#aaaaaa",
-                "mpernas1b": "#aaaaaa",
-                "mpernas1c": "#aaaaaa"
-              },
-              "obs": "Base",
-              "concluido": true
-            },
-            {
-              "id": "10",
-              "nome": "PERNAS (PRA CALCA)",
-              "texturas": {
-                "mpernas1a": "#aaaaaa",
-                "mpernas1b": "#aaaaaa",
-                "mpernas1c": "#aaaaaa"
-              },
-              "obs": "Base",
-              "concluido": true
-            }
-          ]
-        },
-        {
-          "titulo": "3 Modelos de Face",
-          "emoji": "🧑",
-          "resumo_texturas": "Malha Base",
-          "itens": [
-            {
-              "id": "14",
-              "nome": "FACE1",
-              "texturas": {
-                "mface45a": "#aaaaaa",
-                "mface45b": "#aaaaaa",
-                "mface45c": "#aaaaaa"
-              },
-              "obs": "Base",
-              "concluido": true
-            },
-            {
-              "id": "15",
-              "nome": "FACE2",
-              "texturas": {
-                "mface24a": "#aaaaaa",
-                "mface24b": "#aaaaaa",
-                "mface24c": "#aaaaaa"
-              },
-              "obs": "Base",
-              "concluido": true
-            },
-            {
-              "id": "16",
-              "nome": "FACE3",
-              "texturas": {
-                "mface8a": "#aaaaaa",
-                "mface8b": "#aaaaaa",
-                "mface8c": "#aaaaaa"
-              },
-              "obs": "Base",
-              "concluido": true
-            },
-            {
-              "id": "OVERLAY",
-              "nome": "EXTRA",
-              "texturas": {
-                "olho1a": "#aaaaaa"
-              },
-              "obs": "Apenas textura-overlay",
-              "concluido": true
-            }
-          ]
-        },
-        {
-          "titulo": "2 Cabelos + 3 Sombrancelhas",
-          "emoji": "✂️",
-          "resumo_texturas": "Todas Brancas",
-          "itens": [
-            {
-              "id": "-",
+              "id": "cabelo_1",
               "nome": "CABELO 1",
               "texturas": {
-                "mcabelo3a": "#aaaaaa"
+                "cabelo1_t1": "#888888",
+                "cabelo1_t2": "#888888",
+                "cabelo1_t3": "#888888"
               },
-              "obs": "Textura Branca",
-              "concluido": true
+              "obs": "3 Cores",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
             },
             {
-              "id": "-",
+              "id": "cabelo_2",
               "nome": "CABELO 2",
               "texturas": {
-                "mcabelo14a": "#aaaaaa"
+                "cabelo2_t1": "#888888",
+                "cabelo2_t2": "#888888",
+                "cabelo2_t3": "#888888"
               },
-              "obs": "Textura Branca",
-              "concluido": true
-            },
-            {
-              "id": "OVERLAY1",
-              "nome": "SOMBRANCELHA 1",
-              "texturas": {
-                "meyebrow6a": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": true
-            },
-            {
-              "id": "OVERLAY2",
-              "nome": "SOMBRANCELHA 2",
-              "texturas": {
-                "meyebrow6b": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": true
-            },
-            {
-              "id": "OVERLAY3",
-              "nome": "SOMBRANCELHA 3",
-              "texturas": {
-                "meyebrow6c": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": true
+              "obs": "3 Cores",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
             }
-          ]
+          ],
+          "titulo": "👩 Rostos & Cabelos"
         },
         {
-          "titulo": "3 Overlays de Barba",
-          "emoji": "🧔",
-          "resumo_texturas": "Todas Brancas",
+          "id": "parte_superior",
+          "exclusive": true,
           "itens": [
             {
-              "id": "OVERLAY1",
-              "nome": "BARBA 1",
+              "id": "camiseta",
+              "nome": "CAMISETA",
               "texturas": {
-                "barba2a": "#aaaaaa"
+                "camisa_t1": "#888888",
+                "camisa_t2": "#888888"
               },
-              "obs": "Cavanhaque e Bigode",
-              "concluido": true
+              "obs": "Básica",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
             },
             {
-              "id": "OVERLAY2",
-              "nome": "BARBA 2",
+              "id": "jaqueta",
+              "nome": "JAQUETA",
               "texturas": {
-                "barba3a": "#aaaaaa"
+                "jaqueta_t1": "#888888",
+                "jaqueta_t2": "#888888"
               },
-              "obs": "Cavanhaque e Bigode",
-              "concluido": true
-            },
-            {
-              "id": "OVERLAY3",
-              "nome": "BARBA 3",
-              "texturas": {
-                "barba18a": "#aaaaaa"
-              },
-              "obs": "Barba Completa",
-              "concluido": true
+              "obs": "Sobreposição",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
             }
-          ]
+          ],
+          "titulo": "👕 Parte Superior"
         },
         {
-          "titulo": "1 Camisa + 1 Casaco",
-          "emoji": "👕",
-          "resumo_texturas": "Todas Brancas",
+          "id": "parte_inferior",
+          "exclusive": true,
           "itens": [
             {
-              "id": "05",
-              "nome": "CAMISETA (Básica)",
+              "id": "calça",
+              "nome": "CALÇA",
               "texturas": {
-                "mcamisa1a": "#aaaaaa"
+                "calca_t1": "#888888",
+                "calca_t2": "#888888"
               },
-              "obs": "2 texturas",
-              "concluido": true
+              "obs": "Padrão",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
             },
             {
-              "id": "07",
-              "nome": "CASACO (Moletom)",
+              "id": "short",
+              "nome": "SHORT",
               "texturas": {
-                "mcasaco1a": "#aaaaaa"
+                "short_t1": "#888888",
+                "short_t2": "#888888"
               },
-              "obs": "2 texturas",
-              "concluido": true
+              "obs": "Verão",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
+            },
+            {
+              "id": "saia",
+              "nome": "SAIA",
+              "texturas": {
+                "saia_t1": "#888888",
+                "saia_t2": "#888888"
+              },
+              "obs": "Casual",
+              "concluido": false,
+              "status": "pend",
+              "visivel_padrao": false
             }
-          ]
+          ],
+          "titulo": "👖 Parte Inferior"
         },
         {
-          "titulo": "1 Bermuda + 1 Calca",
-          "emoji": "🩳",
-          "resumo_texturas": "Todas Brancas",
+          "id": "calçados",
+          "exclusive": true,
           "itens": [
             {
-              "id": "09",
-              "nome": "BERMUDA 1",
-              "texturas": {
-                "bermuda1a": "#aaaaaa"
-              },
-              "obs": "2 texturas",
-              "concluido": true
-            },
-            {
-              "id": "11",
-              "nome": "CALCA 1",
-              "texturas": {
-                "calca1a": "#aaaaaa"
-              },
-              "obs": "3 texturas",
-              "concluido": true
-            }
-          ]
-        },
-        {
-          "titulo": "1 Havaiana + 1 Tênis",
-          "emoji": "👟",
-          "resumo_texturas": "4 Texturas (2 cada)",
-          "itens": [
-            {
-              "id": "12",
-              "nome": "HAVAIANA",
-              "texturas": {
-                "havaiana1a": "#aaaaaa",
-                "havaiana1b": "#aaaaaa"
-              },
-              "obs": "2 texturas",
-              "concluido": true
-            },
-            {
-              "id": "13",
+              "id": "tênis",
               "nome": "TÊNIS",
               "texturas": {
-                "tenis1a": "#aaaaaa",
-                "tenis1b": "#aaaaaa"
+                "tenis_t1": "#888888",
+                "tenis_t2": "#888888"
               },
-              "obs": "2 texturas",
-              "concluido": true
-            },
-            {
-              "id": "OVERLAY",
-              "nome": "EXTRA",
-              "texturas": {
-                "havaianas1ov": "#aaaaaa"
-              },
-              "obs": "Apenas textura-overlay",
-              "concluido": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "feminina",
-      "titulo": "♀️ Skin Feminina",
-      "orcamento": {
-        "valor_final": "R$ 250,00",
-        "link_pagamento": "https://nubank.com.br/cobrar/3avuif/6ac040ea-4ec2-4f60-a05d-e7cb30d36a96",
-        "pago": false,
-        "link_download": ""
-      },
-      "grupos": [
-        {
-          "titulo": "Corpo Base",
-          "emoji": "👤",
-          "resumo_texturas": "Malha Base",
-          "itens": [
-            {
-              "dff_id": "00",
-              "id": "face021",
-              "nome": "FACE BASE (Sem Cílios)",
-              "texturas": {
-                "fface1a": "#ffccaa"
-              },
-              "obs": "Base",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            },
-            {
-              "id": "torso",
-              "nome": "BRACOS (COMPLETO)",
-              "texturas": {
-                "fbracos1a": "#a08070"
-              },
-              "obs": "Sem blusa",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": true
-            },
-            {
-              "id": "pernas",
-              "nome": "PERNAS (COMPLETO)",
-              "texturas": {
-                "fpernas1a": "#a08070"
-              },
-              "obs": "Base",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": true
-            },
-            {
-              "id": "calcinha",
-              "nome": "CALCINHA",
-              "texturas": {
-                "calcinha1a": "#aaaaaa"
-              },
-              "obs": "Calcinha",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            },
-            {
-              "id": "sutia",
-              "nome": "SUTIÃ",
-              "texturas": {
-                "sutian1a": "#aaaaaa"
-              },
-              "obs": "Sutiã",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            },
-            {
-              "id": "-",
-              "nome": "PERNAS (PRA CALÇA)",
-              "texturas": {
-                "fbracos1a": "#a08070"
-              },
-              "obs": "Base",
+              "obs": "Fechado",
               "concluido": false,
               "status": "pend",
               "visivel_padrao": false
             },
             {
-              "id": "torso_blusa",
-              "nome": "BRAÇOS (DA BLUSA)",
+              "id": "sandália__chinelo",
+              "nome": "SANDÁLIA / CHINELO",
               "texturas": {
-                "fbracos1a": "#a08070"
+                "sandalia_t1": "#888888",
+                "sandalia_t2": "#888888"
               },
-              "obs": "Carregado pela blusa",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            },
-            {
-              "id": "pernas_shorts",
-              "nome": "PERNAS (DO SHORTS)",
-              "texturas": {
-                "fpernas1a": "#a08070"
-              },
-              "obs": "Carregado pelo shorts",
-              "concluido": true,
-              "status": "done",
+              "obs": "Aberto",
+              "concluido": false,
+              "status": "pend",
               "visivel_padrao": false
             }
           ],
-          "exclusive": false
+          "titulo": "👟 Calçados"
         },
         {
-          "titulo": "Rostos",
-          "emoji": "👩",
-          "resumo_texturas": "Malha Base",
+          "id": "acessórios",
+          "exclusive": true,
           "itens": [
             {
-              "id": "face1",
-              "nome": "FACE 1",
+              "id": "boné_ou_mochila",
+              "nome": "BONÉ OU MOCHILA",
               "texturas": {
-                "fface1a": "#aaaaaa"
+                "acessorio_t1": "#888888",
+                "acessorio_t2": "#888888"
               },
-              "malhas": [
-                "cilios1"
-              ],
-              "hides": [
-                "face021"
-              ],
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            },
-            {
-              "id": "face2",
-              "nome": "FACE 2",
-              "texturas": {
-                "fface2a": "#aaaaaa"
-              },
-              "malhas": [
-                "cilios2"
-              ],
-              "hides": [
-                "face021"
-              ],
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": true
-            },
-            {
-              "id": "face3",
-              "nome": "FACE 3",
-              "texturas": {
-                "fface3a": "#aaaaaa"
-              },
-              "malhas": [
-                "cilios3"
-              ],
-              "hides": [
-                "face021"
-              ],
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            }
-          ],
-          "exclusive": true
-        },
-        {
-          "titulo": "Cabelos",
-          "emoji": "💇‍♀️",
-          "resumo_texturas": "Diversos/Branco",
-          "itens": [
-            {
-              "id": "cabelo1",
-              "nome": "CABELO 1 (Rabo de Cavalo/Longo)",
-              "texturas": {
-                "fcabelo1a": "#aaaaaa",
-                "fcabelo1b": "#c0a080",
-                "fcabelo1c": "#502010",
-                "fcabelo1d": "#603020"
-              },
-              "obs": "Diversos/Branco",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            },
-            {
-              "id": "cabelo2",
-              "nome": "CABELO 2 (Cacheado/Longo)",
-              "texturas": {
-                "fcabelo2a": "#30221a",
-                "fcabelo2b": "#d6ab5c",
-                "fcabelo2c": "#1a1a1c",
-                "fcabelo2d": "#8c3b28"
-              },
-              "obs": "Diversos/Branco",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": true
-            },
-            {
-              "id": "-",
-              "nome": "SOBRANCELHA 1",
-              "texturas": {
-                "feyebrow1a": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
-            },
-            {
-              "id": "-",
-              "nome": "SOBRANCELHA 2",
-              "texturas": {
-                "feyebrow2a": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
-            },
-            {
-              "id": "-",
-              "nome": "SOBRANCELHA 3",
-              "texturas": {
-                "feyebrow3a": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
-            },
-            {
-              "id": "cabelo2_blusa",
-              "nome": "CABELO 2 (DA BLUSA)",
-              "texturas": {
-                "fcabelo2a": "#30221a",
-                "fcabelo2b": "#d6ab5c",
-                "fcabelo2c": "#8a2b2b",
-                "fcabelo2d": "#aaaaaa"
-              },
-              "obs": "Carregado pela blusa",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            }
-          ],
-          "exclusive": true
-        },
-        {
-          "titulo": "Overlays: Maquiagem",
-          "emoji": "💄",
-          "resumo_texturas": "Rosto",
-          "itens": [
-            {
-              "id": "-",
-              "nome": "MAQUIAGEM 1",
-              "texturas": {
-                "fmakeup1a": "#aaaaaa"
-              },
-              "obs": "Leve/Gloss",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
-            },
-            {
-              "id": "-",
-              "nome": "MAQUIAGEM 2",
-              "texturas": {
-                "fmakeup2a": "#aaaaaa"
-              },
-              "obs": "Sombra/Delineador",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
-            },
-            {
-              "id": "-",
-              "nome": "MAQUIAGEM 3",
-              "texturas": {
-                "fmakeup3a": "#aaaaaa"
-              },
-              "obs": "Festa/Batom Forte",
+              "obs": "A definir",
               "concluido": false,
               "status": "pend",
               "visivel_padrao": false
             }
           ],
-          "exclusive": false
-        },
-        {
-          "titulo": "Roupas: Superiores",
-          "emoji": "👚",
-          "resumo_texturas": "Todas Brancas",
-          "itens": [
-            {
-              "id": "regata",
-              "nome": "REGATA",
-              "texturas": {
-                "fregata1a": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": true
-            },
-            {
-              "id": "blusa",
-              "nome": "BLUSA CANELADA",
-              "texturas": {
-                "fblusa1a": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false,
-              "malhas": [],
-              "hides": [],
-              "cond_malhas": {
-                "cabelo2": "cabelo2_blusa",
-                "torso": "torso_blusa"
-              }
-            }
-          ],
-          "exclusive": true
-        },
-        {
-          "titulo": "Roupas: Inferiores",
-          "emoji": "👗",
-          "resumo_texturas": "Todas Brancas",
-          "itens": [
-            {
-              "id": "shorts",
-              "nome": "SHORTS",
-              "texturas": {
-                "fshorts1a": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false,
-              "malhas": [],
-              "hides": [],
-              "cond_malhas": {
-                "pernas": "pernas_shorts"
-              }
-            },
-            {
-              "id": "calca",
-              "nome": "CALÇA JEANS",
-              "texturas": {
-                "fjeans1a": "#707070",
-                "fjeans1b": "#505070",
-                "fjeans1c": "#708090",
-                "fjeans1d": "#203040"
-              },
-              "obs": "4 texturas",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": true,
-              "hides": [
-                "pernas"
-              ]
-            }
-          ],
-          "exclusive": true
-        },
-        {
-          "titulo": "Calçados",
-          "emoji": "👠",
-          "resumo_texturas": "Todas Brancas",
-          "itens": [
-            {
-              "id": "havaianas",
-              "nome": "HAVAIANAS",
-              "texturas": {
-                "havaianas1a": "#aaaaaa"
-              },
-              "obs": "Textura Branca",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            },
-            {
-              "id": "tenis",
-              "nome": "TÊNIS",
-              "texturas": {
-                "ftenis1a": "#aaaaaa"
-              },
-              "obs": "2 texturas",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": true
-            }
-          ],
-          "exclusive": true
+          "titulo": "🧢 Acessórios"
         }
       ]
     }

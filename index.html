@@ -549,12 +549,12 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 73;">
+                <div class="circular-progress" style="--prog: 0;">
                     <svg viewBox="0 0 36 36">
                         <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                         <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                     </svg>
-                    <div class="circle-text">73%</div>
+                    <div class="circle-text">0%</div>
                 </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
@@ -566,35 +566,7 @@
 
         <div id="pricing-panel" class="pricing-section">
             
-            <div class="pricing-toggle-btn" onclick="this.parentElement.classList.toggle('minimized')">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-    </div><div class="price-container">
-        <div class="price-display">
-            <span class="price-currency">R$</span>
-            <span class="price-amount">250<span class="price-cents">,00</span></span>
-        </div>
-    </div>
-        <div class="badge-status status-pending">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
-            <span>PAGAMENTO PENDENTE</span>
-        </div>
-        <a href="https://nubank.com.br/cobrar/3avuif/6ac040ea-4ec2-4f60-a05d-e7cb30d36a96" target="_blank" class="btn-action" id="pay-btn">
-            <span class="btn-content">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
-                </svg> EFETUAR PAGAMENTO
-            </span>
-            <span class="btn-content shine-layer" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
-                </svg> EFETUAR PAGAMENTO
-            </span>
-        </a>
-        
+            
 
             </div>
     </div>
@@ -608,574 +580,10 @@
     <script>
         // --- 1. CONFIGURAÇÃO LÓGICA (O "Cérebro" da Interface) ---
         // Aqui dizemos quem faz parte de qual grupo, se é exclusão mútua (ex: short apaga calça) e o status.
-        const logicConfig = {
-    "Corpo Base": {
-        "emoji": "👤",
-        "exclusive": false,
-        "items": [
-            {
-                "id": "face021",
-                "name": "FACE BASE (Sem Cílios)",
-                "status": "done",
-                "texturas_names": [
-                    "fface1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fface1a.png",
-                        "color": "#ffccaa"
-                    }
-                ]
-            },
-            {
-                "id": "torso",
-                "name": "BRACOS (COMPLETO)",
-                "status": "done",
-                "texturas_names": [
-                    "fbracos1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fbracos1a.png",
-                        "color": "#a08070"
-                    }
-                ]
-            },
-            {
-                "id": "pernas",
-                "name": "PERNAS (COMPLETO)",
-                "status": "done",
-                "texturas_names": [
-                    "fpernas1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fpernas1a.png",
-                        "color": "#a08070"
-                    }
-                ]
-            },
-            {
-                "id": "calcinha",
-                "name": "CALCINHA",
-                "status": "done",
-                "texturas_names": [
-                    "calcinha1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "calcinha1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "sutia",
-                "name": "SUTIÃ",
-                "status": "done",
-                "texturas_names": [
-                    "sutian1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "sutian1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "pend_23bf06",
-                "name": "PERNAS (PRA CALÇA)",
-                "status": "pend",
-                "texturas_names": [
-                    "fbracos1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fbracos1a.png",
-                        "color": "#a08070"
-                    }
-                ]
-            },
-            {
-                "id": "torso_blusa",
-                "name": "BRAÇOS (DA BLUSA)",
-                "status": "done",
-                "texturas_names": [
-                    "fbracos1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fbracos1a.png",
-                        "color": "#a08070"
-                    }
-                ]
-            },
-            {
-                "id": "pernas_shorts",
-                "name": "PERNAS (DO SHORTS)",
-                "status": "done",
-                "texturas_names": [
-                    "fpernas1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fpernas1a.png",
-                        "color": "#a08070"
-                    }
-                ]
-            }
-        ]
-    },
-    "Rostos": {
-        "emoji": "👩",
-        "exclusive": true,
-        "items": [
-            {
-                "id": "face1",
-                "name": "FACE 1",
-                "status": "done",
-                "texturas_names": [
-                    "fface1a"
-                ],
-                "malhas": [
-                    "cilios1"
-                ],
-                "hides": [
-                    "face021"
-                ],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fface1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "face2",
-                "name": "FACE 2",
-                "status": "done",
-                "texturas_names": [
-                    "fface2a"
-                ],
-                "malhas": [
-                    "cilios2"
-                ],
-                "hides": [
-                    "face021"
-                ],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fface2a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "face3",
-                "name": "FACE 3",
-                "status": "done",
-                "texturas_names": [
-                    "fface3a"
-                ],
-                "malhas": [
-                    "cilios3"
-                ],
-                "hides": [
-                    "face021"
-                ],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fface3a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            }
-        ]
-    },
-    "Cabelos": {
-        "emoji": "💇‍♀️",
-        "exclusive": true,
-        "items": [
-            {
-                "id": "cabelo1",
-                "name": "CABELO 1 (Rabo de Cavalo/Longo)",
-                "status": "done",
-                "texturas_names": [
-                    "fcabelo1a",
-                    "fcabelo1b",
-                    "fcabelo1c",
-                    "fcabelo1d"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fcabelo1a.png",
-                        "color": "#aaaaaa"
-                    },
-                    {
-                        "file": "fcabelo1b.png",
-                        "color": "#c0a080"
-                    },
-                    {
-                        "file": "fcabelo1c.png",
-                        "color": "#502010"
-                    },
-                    {
-                        "file": "fcabelo1d.png",
-                        "color": "#603020"
-                    }
-                ]
-            },
-            {
-                "id": "cabelo2",
-                "name": "CABELO 2 (Cacheado/Longo)",
-                "status": "done",
-                "texturas_names": [
-                    "fcabelo2a",
-                    "fcabelo2b",
-                    "fcabelo2c",
-                    "fcabelo2d"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fcabelo2a.png",
-                        "color": "#30221a"
-                    },
-                    {
-                        "file": "fcabelo2b.png",
-                        "color": "#d6ab5c"
-                    },
-                    {
-                        "file": "fcabelo2c.png",
-                        "color": "#1a1a1c"
-                    },
-                    {
-                        "file": "fcabelo2d.png",
-                        "color": "#8c3b28"
-                    }
-                ]
-            },
-            {
-                "id": "pend_ce80ad",
-                "name": "SOBRANCELHA 1",
-                "status": "pend",
-                "texturas_names": [
-                    "feyebrow1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "feyebrow1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "pend_81fde7",
-                "name": "SOBRANCELHA 2",
-                "status": "pend",
-                "texturas_names": [
-                    "feyebrow2a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "feyebrow2a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "pend_6acd57",
-                "name": "SOBRANCELHA 3",
-                "status": "pend",
-                "texturas_names": [
-                    "feyebrow3a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "feyebrow3a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "cabelo2_blusa",
-                "name": "CABELO 2 (DA BLUSA)",
-                "status": "done",
-                "texturas_names": [
-                    "fcabelo2a",
-                    "fcabelo2b",
-                    "fcabelo2c",
-                    "fcabelo2d"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fcabelo2a.png",
-                        "color": "#30221a"
-                    },
-                    {
-                        "file": "fcabelo2b.png",
-                        "color": "#d6ab5c"
-                    },
-                    {
-                        "file": "fcabelo2c.png",
-                        "color": "#8a2b2b"
-                    },
-                    {
-                        "file": "fcabelo2d.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            }
-        ]
-    },
-    "Overlays: Maquiagem": {
-        "emoji": "💄",
-        "exclusive": false,
-        "items": [
-            {
-                "id": "pend_37f066",
-                "name": "MAQUIAGEM 1",
-                "status": "pend",
-                "texturas_names": [
-                    "fmakeup1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fmakeup1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "pend_e5de81",
-                "name": "MAQUIAGEM 2",
-                "status": "pend",
-                "texturas_names": [
-                    "fmakeup2a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fmakeup2a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "pend_f694c7",
-                "name": "MAQUIAGEM 3",
-                "status": "pend",
-                "texturas_names": [
-                    "fmakeup3a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fmakeup3a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            }
-        ]
-    },
-    "Roupas: Superiores": {
-        "emoji": "👚",
-        "exclusive": true,
-        "items": [
-            {
-                "id": "regata",
-                "name": "REGATA",
-                "status": "done",
-                "texturas_names": [
-                    "fregata1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fregata1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "blusa",
-                "name": "BLUSA CANELADA",
-                "status": "done",
-                "texturas_names": [
-                    "fblusa1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {
-                    "cabelo2": "cabelo2_blusa",
-                    "torso": "torso_blusa"
-                },
-                "textures": [
-                    {
-                        "file": "fblusa1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            }
-        ]
-    },
-    "Roupas: Inferiores": {
-        "emoji": "👗",
-        "exclusive": true,
-        "items": [
-            {
-                "id": "shorts",
-                "name": "SHORTS",
-                "status": "done",
-                "texturas_names": [
-                    "fshorts1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {
-                    "pernas": "pernas_shorts"
-                },
-                "textures": [
-                    {
-                        "file": "fshorts1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "calca",
-                "name": "CALÇA JEANS",
-                "status": "done",
-                "texturas_names": [
-                    "fjeans1a",
-                    "fjeans1b",
-                    "fjeans1c",
-                    "fjeans1d"
-                ],
-                "malhas": [],
-                "hides": [
-                    "pernas"
-                ],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fjeans1a.png",
-                        "color": "#707070"
-                    },
-                    {
-                        "file": "fjeans1b.png",
-                        "color": "#505070"
-                    },
-                    {
-                        "file": "fjeans1c.png",
-                        "color": "#708090"
-                    },
-                    {
-                        "file": "fjeans1d.png",
-                        "color": "#203040"
-                    }
-                ]
-            }
-        ]
-    },
-    "Calçados": {
-        "emoji": "👠",
-        "exclusive": true,
-        "items": [
-            {
-                "id": "havaianas",
-                "name": "HAVAIANAS",
-                "status": "done",
-                "texturas_names": [
-                    "havaianas1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "havaianas1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "tenis",
-                "name": "TÊNIS",
-                "status": "done",
-                "texturas_names": [
-                    "ftenis1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "ftenis1a.png",
-                        "color": "#aaaaaa"
-                    }
-                ]
-            }
-        ]
-    }
-};
+        const logicConfig = {};
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["torso", "pernas", "face2", "cabelo2", "regata", "calca", "tenis"]);
+        const activeItems = new Set([]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1205,29 +613,28 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
-    </div>
-        <div class="badge-status status-paid">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-            <span>PAGAMENTO CONCLUÍDO</span>
+    </div><div class="price-container">
+        <div class="price-display">
+            <span class="price-currency">R$</span>
+            <span class="price-amount">220<span class="price-cents">,00</span></span>
         </div>
-        <a href="https://drive.google.com/drive/folders/1BMJtawQCqs_USxhxFuygb45JCCqwTc4X?usp=sharing" target="_blank" class="btn-download" id="download-btn">
+    </div>
+        <div class="badge-status status-pending">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span>PAGAMENTO PENDENTE</span>
+        </div>
+        <a href="https://nubank.com.br/cobrar/seu-link-aqui" target="_blank" class="btn-action" id="pay-btn">
             <span class="btn-content">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                BAIXAR SKIN (DRIVE)
+                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg> EFETUAR PAGAMENTO
             </span>
             <span class="btn-content shine-layer" aria-hidden="true">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                BAIXAR SKIN (DRIVE)
+                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg> EFETUAR PAGAMENTO
             </span>
         </a>
         `;
@@ -1237,23 +644,23 @@
         <details class="group-card">
             <summary class="group-header">
                 <div class="group-info">
-                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluido"></span>
-                    <span class="group-icon">👤</span>
-                    <strong>Corpo Base (3 tons de pele)</strong>
+                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                    <span class="group-icon">📦</span>
+                    <strong>👩 Rostos & Cabelos</strong>
                 </div>
-                <span class="tag-texture">Malha Base ▼</span>
+                <span class="tag-texture"> ▼</span>
             </summary>
             <div class="group-content">
         
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 00 - FACE0</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID rosto_1 - ROSTO 1</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface0a, mface0b, mface0c</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: rosto1_t1, rosto1_t2, rosto1_t3</span>
                         <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
                     </div>
                 </div>
@@ -1261,38 +668,12 @@
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 01 - BRACOS (COMPLETO)</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID rosto_2 - ROSTO 2</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mbracos1a, mbracos1b, mbracos1c</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Sem camisa</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 02 - BRACOS (PRA CAMISETA)</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mbracos1a, mbracos1b, mbracos1c</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Corte ombro</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 03 - PERNAS (COMPLETO)</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mpernas1a, mpernas1b, mpernas1c</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: rosto2_t1, rosto2_t2, rosto2_t3</span>
                         <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
                     </div>
                 </div>
@@ -1300,52 +681,26 @@
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 04 - CUECA</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID cabelo_1 - CABELO 1</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcueca1</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: cabelo1_t1, cabelo1_t2, cabelo1_t3</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: 3 Cores</span>
                     </div>
                 </div>
             
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 06 - BRACOS (PRO CASACO)</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID cabelo_2 - CABELO 2</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mbracos1a, mbracos1b, mbracos1c</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Apenas mãos</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 08 - PERNAS (PRA BERMUDA)</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mpernas1a, mpernas1b, mpernas1c</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 10 - PERNAS (PRA CALCA)</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mpernas1a, mpernas1b, mpernas1c</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: cabelo2_t1, cabelo2_t2, cabelo2_t3</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: 3 Cores</span>
                     </div>
                 </div>
             
@@ -1355,63 +710,37 @@
         <details class="group-card">
             <summary class="group-header">
                 <div class="group-info">
-                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluido"></span>
-                    <span class="group-icon">🧑</span>
-                    <strong>3 Modelos de Face</strong>
+                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                    <span class="group-icon">📦</span>
+                    <strong>👕 Parte Superior</strong>
                 </div>
-                <span class="tag-texture">Malha Base ▼</span>
+                <span class="tag-texture"> ▼</span>
             </summary>
             <div class="group-content">
         
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 14 - FACE1</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID camiseta - CAMISETA</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface45a, mface45b, mface45c</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: camisa_t1, camisa_t2</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: Básica</span>
                     </div>
                 </div>
             
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 15 - FACE2</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID jaqueta - JAQUETA</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface24a, mface24b, mface24c</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 16 - FACE3</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface8a, mface8b, mface8c</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID OVERLAY - EXTRA</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: olho1a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Apenas textura-overlay</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: jaqueta_t1, jaqueta_t2</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: Sobreposição</span>
                     </div>
                 </div>
             
@@ -1421,76 +750,50 @@
         <details class="group-card">
             <summary class="group-header">
                 <div class="group-info">
-                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluido"></span>
-                    <span class="group-icon">✂️</span>
-                    <strong>2 Cabelos + 3 Sombrancelhas</strong>
+                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                    <span class="group-icon">📦</span>
+                    <strong>👖 Parte Inferior</strong>
                 </div>
-                <span class="tag-texture">Todas Brancas ▼</span>
+                <span class="tag-texture"> ▼</span>
             </summary>
             <div class="group-content">
         
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID - - CABELO 1</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID calça - CALÇA</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcabelo3a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Textura Branca</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: calca_t1, calca_t2</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: Padrão</span>
                     </div>
                 </div>
             
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID - - CABELO 2</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID short - SHORT</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcabelo14a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Textura Branca</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: short_t1, short_t2</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: Verão</span>
                     </div>
                 </div>
             
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID OVERLAY1 - SOMBRANCELHA 1</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID saia - SAIA</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: meyebrow6a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Textura Branca</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID OVERLAY2 - SOMBRANCELHA 2</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: meyebrow6b</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Textura Branca</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID OVERLAY3 - SOMBRANCELHA 3</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: meyebrow6c</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Textura Branca</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: saia_t1, saia_t2</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: Casual</span>
                     </div>
                 </div>
             
@@ -1500,50 +803,37 @@
         <details class="group-card">
             <summary class="group-header">
                 <div class="group-info">
-                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluido"></span>
-                    <span class="group-icon">🧔</span>
-                    <strong>3 Overlays de Barba</strong>
+                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                    <span class="group-icon">📦</span>
+                    <strong>👟 Calçados</strong>
                 </div>
-                <span class="tag-texture">Todas Brancas ▼</span>
+                <span class="tag-texture"> ▼</span>
             </summary>
             <div class="group-content">
         
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID OVERLAY1 - BARBA 1</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID tênis - TÊNIS</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: barba2a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Cavanhaque e Bigode</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: tenis_t1, tenis_t2</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: Fechado</span>
                     </div>
                 </div>
             
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID OVERLAY2 - BARBA 2</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID sandália__chinelo - SANDÁLIA / CHINELO</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: barba3a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Cavanhaque e Bigode</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID OVERLAY3 - BARBA 3</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: barba18a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Barba Completa</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: sandalia_t1, sandalia_t2</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: Aberto</span>
                     </div>
                 </div>
             
@@ -1553,130 +843,24 @@
         <details class="group-card">
             <summary class="group-header">
                 <div class="group-info">
-                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluido"></span>
-                    <span class="group-icon">👕</span>
-                    <strong>1 Camisa + 1 Casaco</strong>
+                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                    <span class="group-icon">📦</span>
+                    <strong>🧢 Acessórios</strong>
                 </div>
-                <span class="tag-texture">Todas Brancas ▼</span>
+                <span class="tag-texture"> ▼</span>
             </summary>
             <div class="group-content">
         
                 <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
                     <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 05 - CAMISETA (Básica)</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
+                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID boné_ou_mochila - BONÉ OU MOCHILA</span>
+                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
+                                Pendente
                             </span>
                         </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcamisa1a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: 2 texturas</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 07 - CASACO (Moletom)</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcasaco1a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: 2 texturas</span>
-                    </div>
-                </div>
-            
-            </div>
-        </details>
-        
-        <details class="group-card">
-            <summary class="group-header">
-                <div class="group-info">
-                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluido"></span>
-                    <span class="group-icon">🩳</span>
-                    <strong>1 Bermuda + 1 Calca</strong>
-                </div>
-                <span class="tag-texture">Todas Brancas ▼</span>
-            </summary>
-            <div class="group-content">
-        
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 09 - BERMUDA 1</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: bermuda1a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: 2 texturas</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 11 - CALCA 1</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: calca1a</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: 3 texturas</span>
-                    </div>
-                </div>
-            
-            </div>
-        </details>
-        
-        <details class="group-card">
-            <summary class="group-header">
-                <div class="group-info">
-                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluido"></span>
-                    <span class="group-icon">👟</span>
-                    <strong>1 Havaiana + 1 Tênis</strong>
-                </div>
-                <span class="tag-texture">4 Texturas (2 cada) ▼</span>
-            </summary>
-            <div class="group-content">
-        
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 12 - HAVAIANA</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: havaiana1a, havaiana1b</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: 2 texturas</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID 13 - TÊNIS</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: tenis1a, tenis1b</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: 2 texturas</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID OVERLAY - EXTRA</span>
-                            <span class="status-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981; padding: 2px 6px; font-size: 0.65rem;">
-                                Pronto
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: havaianas1ov</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Apenas textura-overlay</span>
+                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: acessorio_t1, acessorio_t2</span>
+                        <span style="font-size: 0.75rem; color: #666;">Obs: A definir</span>
                     </div>
                 </div>
             
@@ -1693,46 +877,18 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 73;">
+                                        <div class="circular-progress" style="--prog: 0;">
                                             <svg viewBox="0 0 36 36">
                                                 <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                                 <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                             </svg>
-                                            <div class="circle-text">73%</div>
+                                            <div class="circle-text">0%</div>
                                         </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 
                 // Restaura a Pricing Section Original
-                pricing.innerHTML = `<div class="pricing-toggle-btn" onclick="this.parentElement.classList.toggle('minimized')">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-    </div><div class="price-container">
-        <div class="price-display">
-            <span class="price-currency">R$</span>
-            <span class="price-amount">250<span class="price-cents">,00</span></span>
-        </div>
-    </div>
-        <div class="badge-status status-pending">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
-            <span>PAGAMENTO PENDENTE</span>
-        </div>
-        <a href="https://nubank.com.br/cobrar/3avuif/6ac040ea-4ec2-4f60-a05d-e7cb30d36a96" target="_blank" class="btn-action" id="pay-btn">
-            <span class="btn-content">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
-                </svg> EFETUAR PAGAMENTO
-            </span>
-            <span class="btn-content shine-layer" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
-                </svg> EFETUAR PAGAMENTO
-            </span>
-        </a>
-        `;
+                pricing.innerHTML = ``;
                 
                 // Restaura a renderizacao 3D da UI
                 renderUI();
