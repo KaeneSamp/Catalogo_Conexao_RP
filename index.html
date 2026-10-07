@@ -364,6 +364,7 @@
             font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px;
             background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 10px 30px rgba(176, 132, 204, 0.2);
         }
@@ -539,6 +540,76 @@
             body.ui-collapsed .mobile-toggle-btn svg { transform: rotate(180deg); }
             .pricing-section.minimized .pricing-toggle-btn svg { transform: rotate(180deg); }
         }
+        
+        /* --- CONCEITO 2: CORTE ÓPTICO TOTAL --- */
+        .cutout-price-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .c2-cutout-strip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .c2-slash-price {
+            position: relative;
+            color: #666;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .c2-slash-price::after {
+            content: '';
+            position: absolute;
+            left: -3px;
+            right: -3px;
+            top: 50%;
+            height: 1.5px;
+            background: #10b981;
+            box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+            transform: rotate(-6deg);
+        }
+
+        .c2-paid-badge {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 1px 7px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .cutout-price-box .price-container {
+            margin-bottom: 0 !important;
+        }
+
+        .c2-status-mini {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            color: #888;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .c2-status-mini .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+        }
 </style>
 </head>
 <body>
@@ -586,7 +657,38 @@
 
         <div id="pricing-panel" class="pricing-section">
             
-            
+            <div class="pricing-toggle-btn" onclick="this.parentElement.classList.toggle('minimized')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </div>
+        <div class="cutout-price-box">
+            <div class="c2-cutout-strip">
+                <span>Total:</span>
+                <span class="c2-slash-price">R$ 220,00</span>
+            </div>
+
+            <div class="price-container">
+                <div class="price-display">
+                    <span class="price-currency">R$</span>
+                    <span class="price-amount">120<span class="price-cents">,00</span></span>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://nubank.com.br/cobrar/seu-link-aqui" target="_blank" class="btn-action" id="pay-btn">
+            <span class="btn-content">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
+                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg> EFETUAR PAGAMENTO
+            </span>
+            <span class="btn-content shine-layer" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
+                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg> EFETUAR PAGAMENTO
+            </span>
+        </a>
+        
 
             </div>
     </div>
@@ -600,7 +702,346 @@
     <script>
         // --- 1. CONFIGURAÇÃO LÓGICA (O "Cérebro" da Interface) ---
         // Aqui dizemos quem faz parte de qual grupo, se é exclusão mútua (ex: short apaga calça) e o status.
-        const logicConfig = {};
+        const logicConfig = {
+    "👩 Rostos": {
+        "exclusive": true,
+        "items": [
+            {
+                "id": "rosto_1",
+                "dff_id": "Não definido",
+                "name": "ROSTO 1",
+                "status": "pend",
+                "texturas_names": [
+                    "rosto1_t1",
+                    "rosto1_t2",
+                    "rosto1_t3"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "rosto1_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "rosto1_t2.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "rosto1_t3.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "rosto_2",
+                "dff_id": "Não definido",
+                "name": "ROSTO 2",
+                "status": "pend",
+                "texturas_names": [
+                    "rosto2_t1",
+                    "rosto2_t2",
+                    "rosto2_t3"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "rosto2_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "rosto2_t2.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "rosto2_t3.png",
+                        "color": "#888888"
+                    }
+                ]
+            }
+        ]
+    },
+    "💇‍♀️ Cabelos": {
+        "exclusive": true,
+        "items": [
+            {
+                "id": "cabelo_1",
+                "dff_id": "Não definido",
+                "name": "CABELO 1",
+                "status": "pend",
+                "texturas_names": [
+                    "cabelo1_t1",
+                    "cabelo1_t2",
+                    "cabelo1_t3"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "cabelo1_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "cabelo1_t2.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "cabelo1_t3.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "cabelo_2",
+                "dff_id": "Não definido",
+                "name": "CABELO 2",
+                "status": "pend",
+                "texturas_names": [
+                    "cabelo2_t1",
+                    "cabelo2_t2",
+                    "cabelo2_t3"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "cabelo2_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "cabelo2_t2.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "cabelo2_t3.png",
+                        "color": "#888888"
+                    }
+                ]
+            }
+        ]
+    },
+    "👕 Parte Superior": {
+        "exclusive": true,
+        "items": [
+            {
+                "id": "camiseta",
+                "dff_id": "Não definido",
+                "name": "CAMISETA",
+                "status": "pend",
+                "texturas_names": [
+                    "camisa_t1",
+                    "camisa_t2"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "camisa_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "camisa_t2.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "jaqueta",
+                "dff_id": "Não definido",
+                "name": "JAQUETA",
+                "status": "pend",
+                "texturas_names": [
+                    "jaqueta_t1",
+                    "jaqueta_t2"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "jaqueta_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "jaqueta_t2.png",
+                        "color": "#888888"
+                    }
+                ]
+            }
+        ]
+    },
+    "👖 Parte Inferior": {
+        "exclusive": true,
+        "items": [
+            {
+                "id": "calça",
+                "dff_id": "Não definido",
+                "name": "CALÇA",
+                "status": "pend",
+                "texturas_names": [
+                    "calca_t1",
+                    "calca_t2"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "calca_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "calca_t2.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "short",
+                "dff_id": "Não definido",
+                "name": "SHORT",
+                "status": "pend",
+                "texturas_names": [
+                    "short_t1",
+                    "short_t2"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "short_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "short_t2.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "saia",
+                "dff_id": "Não definido",
+                "name": "SAIA",
+                "status": "pend",
+                "texturas_names": [
+                    "saia_t1",
+                    "saia_t2"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "saia_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "saia_t2.png",
+                        "color": "#888888"
+                    }
+                ]
+            }
+        ]
+    },
+    "👟 Calçados": {
+        "exclusive": true,
+        "items": [
+            {
+                "id": "tênis",
+                "dff_id": "Não definido",
+                "name": "TÊNIS",
+                "status": "pend",
+                "texturas_names": [
+                    "tenis_t1",
+                    "tenis_t2"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "tenis_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "tenis_t2.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "sandália__chinelo",
+                "dff_id": "Não definido",
+                "name": "SANDÁLIA / CHINELO",
+                "status": "pend",
+                "texturas_names": [
+                    "sandalia_t1",
+                    "sandalia_t2"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "sandalia_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "sandalia_t2.png",
+                        "color": "#888888"
+                    }
+                ]
+            }
+        ]
+    },
+    "🧢 Acessórios": {
+        "exclusive": true,
+        "items": [
+            {
+                "id": "boné_ou_mochila",
+                "dff_id": "Não definido",
+                "name": "BONÉ OU MOCHILA",
+                "status": "pend",
+                "texturas_names": [
+                    "acessorio_t1",
+                    "acessorio_t2"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "acessorio_t1.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "acessorio_t2.png",
+                        "color": "#888888"
+                    }
+                ]
+            }
+        ]
+    }
+};
 
         // Estado ativo atual (O que está visível no 3D)
         const activeItems = new Set([]);
@@ -629,264 +1070,10 @@
                                     <p>Arquivos Entregues (V1)</p>`;
                 
                 // Mudar Preco para Concluido
-                pricing.innerHTML = `<div class="pricing-toggle-btn" onclick="this.parentElement.classList.toggle('minimized')">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-    </div><div class="price-container">
-        <div class="price-display">
-            <span class="price-currency">R$</span>
-            <span class="price-amount">220<span class="price-cents">,00</span></span>
-        </div>
-    </div>
-        <div class="badge-status status-pending">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
-            <span>PAGAMENTO PENDENTE</span>
-        </div>
-        <a href="https://nubank.com.br/cobrar/seu-link-aqui" target="_blank" class="btn-action" id="pay-btn">
-            <span class="btn-content">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
-                </svg> EFETUAR PAGAMENTO
-            </span>
-            <span class="btn-content shine-layer" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
-                </svg> EFETUAR PAGAMENTO
-            </span>
-        </a>
-        `;
+                pricing.innerHTML = ``;
                 
                 // Renderizar Lista Simples em Texto
-                container.innerHTML = `<div style='color: #ccc; font-size: 0.85rem; margin-bottom: 10px;'>Este pacote não possui visualização 3D habilitada. Relação contratada:</div>` + `
-        <details class="group-card">
-            <summary class="group-header">
-                <div class="group-info">
-                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
-                    <span class="group-icon">📦</span>
-                    <strong>👩 Rostos & Cabelos</strong>
-                </div>
-                <span class="tag-texture"> ▼</span>
-            </summary>
-            <div class="group-content">
-        
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID rosto_1 - ROSTO 1</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: rosto1_t1, rosto1_t2, rosto1_t3</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID rosto_2 - ROSTO 2</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: rosto2_t1, rosto2_t2, rosto2_t3</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Base</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID cabelo_1 - CABELO 1</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: cabelo1_t1, cabelo1_t2, cabelo1_t3</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: 3 Cores</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID cabelo_2 - CABELO 2</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: cabelo2_t1, cabelo2_t2, cabelo2_t3</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: 3 Cores</span>
-                    </div>
-                </div>
-            
-            </div>
-        </details>
-        
-        <details class="group-card">
-            <summary class="group-header">
-                <div class="group-info">
-                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
-                    <span class="group-icon">📦</span>
-                    <strong>👕 Parte Superior</strong>
-                </div>
-                <span class="tag-texture"> ▼</span>
-            </summary>
-            <div class="group-content">
-        
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID camiseta - CAMISETA</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: camisa_t1, camisa_t2</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Básica</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID jaqueta - JAQUETA</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: jaqueta_t1, jaqueta_t2</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Sobreposição</span>
-                    </div>
-                </div>
-            
-            </div>
-        </details>
-        
-        <details class="group-card">
-            <summary class="group-header">
-                <div class="group-info">
-                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
-                    <span class="group-icon">📦</span>
-                    <strong>👖 Parte Inferior</strong>
-                </div>
-                <span class="tag-texture"> ▼</span>
-            </summary>
-            <div class="group-content">
-        
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID calça - CALÇA</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: calca_t1, calca_t2</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Padrão</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID short - SHORT</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: short_t1, short_t2</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Verão</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID saia - SAIA</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: saia_t1, saia_t2</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Casual</span>
-                    </div>
-                </div>
-            
-            </div>
-        </details>
-        
-        <details class="group-card">
-            <summary class="group-header">
-                <div class="group-info">
-                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
-                    <span class="group-icon">📦</span>
-                    <strong>👟 Calçados</strong>
-                </div>
-                <span class="tag-texture"> ▼</span>
-            </summary>
-            <div class="group-content">
-        
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID tênis - TÊNIS</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: tenis_t1, tenis_t2</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Fechado</span>
-                    </div>
-                </div>
-            
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID sandália__chinelo - SANDÁLIA / CHINELO</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: sandalia_t1, sandalia_t2</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: Aberto</span>
-                    </div>
-                </div>
-            
-            </div>
-        </details>
-        
-        <details class="group-card">
-            <summary class="group-header">
-                <div class="group-info">
-                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
-                    <span class="group-icon">📦</span>
-                    <strong>🧢 Acessórios</strong>
-                </div>
-                <span class="tag-texture"> ▼</span>
-            </summary>
-            <div class="group-content">
-        
-                <div class="interactive-item" style="cursor: default; padding: 12px; border-color: rgba(255,255,255,0.05); margin-bottom: 6px;">
-                    <div style="display:flex; flex-direction:column; gap:4px; width: 100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <span style="font-size: 0.9rem; font-weight: 600; color: #fff;">ID boné_ou_mochila - BONÉ OU MOCHILA</span>
-                            <span class="status-badge" style="background: transparent; color: #eab308; border: 1px solid #eab308; padding: 2px 6px; font-size: 0.65rem;">
-                                Pendente
-                            </span>
-                        </div>
-                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: acessorio_t1, acessorio_t2</span>
-                        <span style="font-size: 0.75rem; color: #666;">Obs: A definir</span>
-                    </div>
-                </div>
-            
-            </div>
-        </details>
-        `;
+                container.innerHTML = `<div style='color: #ccc; font-size: 0.85rem; margin-bottom: 10px;'>Este pacote não possui visualização 3D habilitada. Relação contratada:</div>` + ``;
                 
             } else {
                 // Restaurar Menu Feminino (3D)
@@ -902,7 +1089,38 @@
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 
                 // Restaura a Pricing Section Original
-                pricing.innerHTML = ``;
+                pricing.innerHTML = `<div class="pricing-toggle-btn" onclick="this.parentElement.classList.toggle('minimized')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </div>
+        <div class="cutout-price-box">
+            <div class="c2-cutout-strip">
+                <span>Total:</span>
+                <span class="c2-slash-price">R$ 220,00</span>
+            </div>
+
+            <div class="price-container">
+                <div class="price-display">
+                    <span class="price-currency">R$</span>
+                    <span class="price-amount">120<span class="price-cents">,00</span></span>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://nubank.com.br/cobrar/seu-link-aqui" target="_blank" class="btn-action" id="pay-btn">
+            <span class="btn-content">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
+                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg> EFETUAR PAGAMENTO
+            </span>
+            <span class="btn-content shine-layer" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
+                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg> EFETUAR PAGAMENTO
+            </span>
+        </a>
+        `;
                 
                 // Restaura a renderizacao 3D da UI
                 renderUI();
@@ -932,7 +1150,7 @@
 
                 const summary = document.createElement('summary');
                 summary.className = 'group-header';
-                summary.innerHTML = `<span>${groupData.emoji} ${groupName}</span> <span style="font-size:0.8rem; color:var(--accent);">▼</span>`;
+                summary.innerHTML = `<span>${groupName}</span> <span style="font-size:0.8rem; color:var(--accent);">▼</span>`;
                 
                 const content = document.createElement('div');
                 content.className = 'group-content';
@@ -1298,9 +1516,10 @@
 
 
             } catch (e) {
-                console.error(e);
-                document.getElementById('loading-overlay').innerHTML = "ERRO AO CARREGAR 3D";
-                document.getElementById('loading-overlay').style.color = "red";
+                console.log("3D em desenvolvimento");
+                const overlay = document.getElementById('loading-overlay');
+                overlay.innerHTML = "<div style='text-align:center;'><span style='font-size:2rem;display:block;margin-bottom:8px;'>🚧</span><span style='color:var(--accent);font-weight:700;letter-spacing:1px;'>MODELOS 3D EM PRODUÇÃO</span><p style='color:var(--text-muted);font-size:0.8rem;margin-top:5px;letter-spacing:0;'>Consulte a relação contratada e o orçamento no painel lateral.</p></div>";
+                overlay.style.background = "radial-gradient(circle at 50% 50%, #1c1823 0%, var(--bg-body) 70%)";
             }
         }
 

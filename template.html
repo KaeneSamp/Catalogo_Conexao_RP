@@ -540,6 +540,76 @@
             body.ui-collapsed .mobile-toggle-btn svg { transform: rotate(180deg); }
             .pricing-section.minimized .pricing-toggle-btn svg { transform: rotate(180deg); }
         }
+        
+        /* --- CONCEITO 2: CORTE ÓPTICO TOTAL --- */
+        .cutout-price-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .c2-cutout-strip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .c2-slash-price {
+            position: relative;
+            color: #666;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .c2-slash-price::after {
+            content: '';
+            position: absolute;
+            left: -3px;
+            right: -3px;
+            top: 50%;
+            height: 1.5px;
+            background: #10b981;
+            box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+            transform: rotate(-6deg);
+        }
+
+        .c2-paid-badge {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 1px 7px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .cutout-price-box .price-container {
+            margin-bottom: 0 !important;
+        }
+
+        .c2-status-mini {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            color: #888;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .c2-status-mini .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+        }
 </style>
 </head>
 <body>
@@ -679,7 +749,7 @@
 
                 const summary = document.createElement('summary');
                 summary.className = 'group-header';
-                summary.innerHTML = `<span>${groupData.emoji} ${groupName}</span> <span style="font-size:0.8rem; color:var(--accent);">▼</span>`;
+                summary.innerHTML = `<span>${groupName}</span> <span style="font-size:0.8rem; color:var(--accent);">▼</span>`;
                 
                 const content = document.createElement('div');
                 content.className = 'group-content';
@@ -1045,9 +1115,10 @@
 
 
             } catch (e) {
-                console.error(e);
-                document.getElementById('loading-overlay').innerHTML = "ERRO AO CARREGAR 3D";
-                document.getElementById('loading-overlay').style.color = "red";
+                console.log("3D em desenvolvimento");
+                const overlay = document.getElementById('loading-overlay');
+                overlay.innerHTML = "<div style='text-align:center;'><span style='font-size:2rem;display:block;margin-bottom:8px;'>🚧</span><span style='color:var(--accent);font-weight:700;letter-spacing:1px;'>MODELOS 3D EM PRODUÇÃO</span><p style='color:var(--text-muted);font-size:0.8rem;margin-top:5px;letter-spacing:0;'>Consulte a relação contratada e o orçamento no painel lateral.</p></div>";
+                overlay.style.background = "radial-gradient(circle at 50% 50%, #1c1823 0%, var(--bg-body) 70%)";
             }
         }
 

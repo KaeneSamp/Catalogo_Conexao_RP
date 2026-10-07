@@ -11,12 +11,13 @@
   },
   "skins": [
     {
-      "id": "masculina",
+      "id": "feminina",
       "titulo": "Skin Base",
       "grupos": [
         {
-          "id": "rostos_cabelos",
+          "id": "rostos",
           "exclusive": true,
+          "titulo": "👩 Rostos",
           "itens": [
             {
               "id": "rosto_1",
@@ -43,7 +44,14 @@
               "concluido": false,
               "status": "pend",
               "visivel_padrao": false
-            },
+            }
+          ]
+        },
+        {
+          "id": "cabelos",
+          "exclusive": true,
+          "titulo": "💇‍♀️ Cabelos",
+          "itens": [
             {
               "id": "cabelo_1",
               "nome": "CABELO 1",
@@ -70,8 +78,7 @@
               "status": "pend",
               "visivel_padrao": false
             }
-          ],
-          "titulo": "👩 Rostos & Cabelos"
+          ]
         },
         {
           "id": "parte_superior",

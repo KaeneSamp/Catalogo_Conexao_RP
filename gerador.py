@@ -15,7 +15,6 @@ def gerar_html_painel(skin_data):
             <summary class="group-header">
                 <div class="group-info">
                     {status_dot}
-                    <span class="group-icon">{grupo.get('emoji', '📦')}</span>
                     <strong>{grupo['titulo']}</strong>
                 </div>
                 <span class="tag-texture">{grupo.get('resumo_texturas', '')} ▼</span>
@@ -49,7 +48,6 @@ def gerar_html_painel(skin_data):
     return html
 
 def get_pricing_html(skin_data, global_data=None):
-    # Usa o orcamento do skin_data (se existir) senao usa o global
     orcamento = skin_data.get('orcamento') if skin_data else None
     if not orcamento and global_data:
         orcamento = global_data.get('orcamento')
@@ -57,11 +55,14 @@ def get_pricing_html(skin_data, global_data=None):
     if not orcamento:
         return ""
 
-    valor_str = orcamento.get('valor_final', 'R$ 0,00').replace('R$ ', '')
+    valor_total = orcamento.get('valor_final', 'R$ 220,00')
+    sinal_pago = orcamento.get('sinal_pago', 'R$ 100,00')
+    valor_restante_str = orcamento.get('valor_restante', 'R$ 120,00').replace('R$ ', '').strip()
+    
     try:
-        reais, centavos = valor_str.split(',')
+        reais, centavos = valor_restante_str.split(',')
     except:
-        reais, centavos = valor_str, "00"
+        reais, centavos = valor_restante_str, "00"
         
     is_pago = orcamento.get('pago', False)
     link = orcamento.get('link_download', '#') if is_pago else orcamento.get('link_pagamento', '#')
@@ -100,18 +101,21 @@ def get_pricing_html(skin_data, global_data=None):
         </a>
         '''
     else:
-        html += f'''<div class="price-container">
-        <div class="price-display">
-            <span class="price-currency">R$</span>
-            <span class="price-amount">{reais}<span class="price-cents">,{centavos}</span></span>
+        html += f'''
+        <div class="cutout-price-box">
+            <div class="c2-cutout-strip">
+                <span>Total:</span>
+                <span class="c2-slash-price">{valor_total}</span>
+            </div>
+
+            <div class="price-container">
+                <div class="price-display">
+                    <span class="price-currency">R$</span>
+                    <span class="price-amount">{reais}<span class="price-cents">,{centavos}</span></span>
+                </div>
+            </div>
         </div>
-    </div>
-        <div class="badge-status status-pending">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
-            <span>PAGAMENTO PENDENTE</span>
-        </div>
+
         <a href="{link}" target="_blank" class="btn-action" id="pay-btn">
             <span class="btn-content">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
@@ -222,7 +226,6 @@ def gerar_html(dados):
         for group in skin_fem['grupos']:
             group_name = group['titulo']
             logic_obj[group_name] = {
-                "emoji": group.get('emoji', '📦'),
                 "exclusive": group.get('exclusive', False),
                 "items": []
             }
@@ -323,7 +326,7 @@ def gerar_md(dados):
             obs_str = item.get('obs', '-')
             # ------------------------------------------------
             
-            md += f"| **{display_id}** | {status} | {item.get('emoji', '')} {item.get('grupo', '')} | **{item['nome']}** | {texturas} | {swaps_str} | {obs_str} |\n"
+            md += f"| **{display_id}** | {status} | {item.get('grupo', '')} | **{item['nome']}** | {texturas} | {swaps_str} | {obs_str} |\n"
         md += "\n"
     return md
 
