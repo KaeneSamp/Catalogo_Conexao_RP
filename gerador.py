@@ -1,4 +1,5 @@
 import json
+import os
 
 def gerar_html_painel(skin_data):
     html = ""
@@ -126,6 +127,22 @@ def get_pricing_html(skin_data, global_data=None):
         '''
     return html
 
+def get_prog_widget(prog):
+    if prog == '100':
+        return '''<div class="circular-progress premium-completed-halo" title="Projeto 100% Concluído!">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>'''
+    else:
+        return f'''<div class="circular-progress" style="--prog: {prog};">
+                    <svg viewBox="0 0 36 36">
+                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    </svg>
+                    <div class="circle-text">{prog}%</div>
+                </div>'''
+
 def gerar_html(dados):
     skin_masc = next((s for s in dados['skins'] if s['id'] == 'masculina'), None)
     skin_fem = next((s for s in dados['skins'] if s['id'] == 'feminina'), None)
@@ -191,6 +208,8 @@ def gerar_html(dados):
                             if not any(i['id'] == m for i in base_group['itens']):
                                 base_group['itens'].append(novo_item)
                                 item_to_group[m] = base_group
+    except FileNotFoundError:
+        pass
     except Exception as e:
         print("Aviso: Falha na blindagem inteligente", e)
     # ---------------------------------------------------------
@@ -216,12 +235,14 @@ def gerar_html(dados):
 
                 logic_item = {
                     "id": item_id,
+                    "dff_id": item.get('dff_id', 'Não definido'),
                     "name": item.get('nome', 'Item'),
                     "status": "done" if item.get('concluido', False) else "pend",
                     "texturas_names": list(item.get('texturas', {}).keys()) if isinstance(item.get('texturas'), dict) else item.get('texturas', []),
                     "malhas": item.get('malhas', []),
                     "hides": item.get('hides', []),
-                    "cond_malhas": item.get('cond_malhas', {})
+                    "cond_malhas": item.get('cond_malhas', {}),
+                    "hide_ui": item.get('hide_ui', False)
                 }
                 if item.get('visivel_padrao', False):
                     active_items.append(logic_item["id"])
@@ -245,6 +266,8 @@ def gerar_html(dados):
     template = template.replace('__ACTIVE_ITEMS__', active_items_str)
     template = template.replace('__PROG_MASC__', prog_masc)
     template = template.replace('__PROG_FEM__', prog_fem)
+    template = template.replace('__WIDGET_PROG_MASC__', get_prog_widget(prog_masc))
+    template = template.replace('__WIDGET_PROG_FEM__', get_prog_widget(prog_fem).replace('\n', ''))
 
     return template
 
@@ -305,6 +328,10 @@ def gerar_md(dados):
     return md
 
 if __name__ == "__main__":
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    if base_dir:
+        os.chdir(base_dir)
+        
     with open("dados.json", "r", encoding="utf-8") as f:
         dados = json.load(f)
         
