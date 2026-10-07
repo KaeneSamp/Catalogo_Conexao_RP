@@ -2,6 +2,10 @@ import os
 import time
 import subprocess
 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+if base_dir:
+    os.chdir(base_dir)
+
 arquivos_monitorados = ['dados.json', 'template.html', 'gerador.py']
 
 def obter_ultima_modificacao():
