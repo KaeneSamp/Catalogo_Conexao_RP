@@ -646,7 +646,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 0;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">0%</div>                </div>
+                <div class="circular-progress" style="--prog: 40;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">40%</div>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -665,7 +665,7 @@
         <div class="cutout-price-box">
             <div class="c2-cutout-strip">
                 <span>Total:</span>
-                <span class="c2-slash-price">R$ 220,00</span>
+                <span class="c2-slash-price">R$ 250,00</span>
             </div>
 
             <div class="price-container">
@@ -676,7 +676,7 @@
             </div>
         </div>
 
-        <a href="https://nubank.com.br/cobrar/seu-link-aqui" target="_blank" class="btn-action" id="pay-btn">
+        <a href="https://nubank.com.br/cobrar/3avuif/6ac6f3ee-b91e-4af8-b759-2d41f40d5d7e" target="_blank" class="btn-action" id="pay-btn">
             <span class="btn-content">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
                     <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
@@ -703,18 +703,18 @@
         // --- 1. CONFIGURAÇÃO LÓGICA (O "Cérebro" da Interface) ---
         // Aqui dizemos quem faz parte de qual grupo, se é exclusão mútua (ex: short apaga calça) e o status.
         const logicConfig = {
-    "👩 Rostos": {
-        "exclusive": true,
+    "🙇‍♀️ Corpo": {
+        "exclusive": false,
         "items": [
             {
-                "id": "rosto_1",
+                "id": "torso",
                 "dff_id": "Não definido",
-                "name": "ROSTO 1",
-                "status": "pend",
+                "name": "BRACOS (COMPLETO)",
+                "status": "done",
                 "texturas_names": [
-                    "rosto1_t1",
-                    "rosto1_t2",
-                    "rosto1_t3"
+                    "fbracos1a",
+                    "fbracos1b",
+                    "fbracos1c"
                 ],
                 "malhas": [],
                 "hides": [],
@@ -722,15 +722,107 @@
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "rosto1_t1.png",
+                        "file": "fbracos1a.png",
+                        "color": "#b08060"
+                    },
+                    {
+                        "file": "fbracos1b.png",
                         "color": "#888888"
                     },
                     {
-                        "file": "rosto1_t2.png",
+                        "file": "fbracos1c.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "pernas",
+                "dff_id": "Não definido",
+                "name": "PERNAS (COMPLETO)",
+                "status": "done",
+                "texturas_names": [
+                    "fpernas1a",
+                    "fpernas1b",
+                    "fpernas1c"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "fpernas1a.png",
+                        "color": "#b08060"
+                    },
+                    {
+                        "file": "fpernas1b.png",
                         "color": "#888888"
                     },
                     {
-                        "file": "rosto1_t3.png",
+                        "file": "fpernas1c.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "biquini1",
+                "dff_id": "Não definido",
+                "name": "BIQUINI",
+                "status": "done",
+                "texturas_names": [
+                    "biquini1b",
+                    "biquini1a",
+                    "biquini1c"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "biquini1b.png",
+                        "color": "#101010"
+                    },
+                    {
+                        "file": "biquini1a.png",
+                        "color": "#b0b0b0"
+                    },
+                    {
+                        "file": "biquini1c.png",
+                        "color": "#a02020"
+                    }
+                ]
+            }
+        ]
+    },
+    "👩 Rostos": {
+        "exclusive": true,
+        "items": [
+            {
+                "id": "face1",
+                "dff_id": "Não definido",
+                "name": "ROSTO 1",
+                "status": "done",
+                "texturas_names": [
+                    "ffacek1a",
+                    "ffacek1b",
+                    "ffacek1c"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "ffacek1a.png",
+                        "color": "#b08060"
+                    },
+                    {
+                        "file": "ffacek1b.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "ffacek1c.png",
                         "color": "#888888"
                     }
                 ]
@@ -770,14 +862,14 @@
         "exclusive": true,
         "items": [
             {
-                "id": "cabelo_1",
+                "id": "cabelo1",
                 "dff_id": "Não definido",
                 "name": "CABELO 1",
-                "status": "pend",
+                "status": "done",
                 "texturas_names": [
-                    "cabelo1_t1",
-                    "cabelo1_t2",
-                    "cabelo1_t3"
+                    "fcabelo1a",
+                    "fcabelo1b",
+                    "fcabelo1c"
                 ],
                 "malhas": [],
                 "hides": [],
@@ -785,28 +877,28 @@
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "cabelo1_t1.png",
-                        "color": "#888888"
+                        "file": "fcabelo1a.png",
+                        "color": "#000000"
                     },
                     {
-                        "file": "cabelo1_t2.png",
-                        "color": "#888888"
+                        "file": "fcabelo1b.png",
+                        "color": "#b09060"
                     },
                     {
-                        "file": "cabelo1_t3.png",
-                        "color": "#888888"
+                        "file": "fcabelo1c.png",
+                        "color": "#201010"
                     }
                 ]
             },
             {
-                "id": "cabelo_2",
+                "id": "cabelo2",
                 "dff_id": "Não definido",
                 "name": "CABELO 2",
-                "status": "pend",
+                "status": "done",
                 "texturas_names": [
-                    "cabelo2_t1",
-                    "cabelo2_t2",
-                    "cabelo2_t3"
+                    "fcabelo2a",
+                    "fcabelo2b",
+                    "fcabelo2c"
                 ],
                 "malhas": [],
                 "hides": [],
@@ -814,16 +906,16 @@
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "cabelo2_t1.png",
-                        "color": "#888888"
+                        "file": "fcabelo2a.png",
+                        "color": "#000000"
                     },
                     {
-                        "file": "cabelo2_t2.png",
-                        "color": "#888888"
+                        "file": "fcabelo2b.png",
+                        "color": "#b09060"
                     },
                     {
-                        "file": "cabelo2_t3.png",
-                        "color": "#888888"
+                        "file": "fcabelo2c.png",
+                        "color": "#201010"
                     }
                 ]
             }
@@ -1044,7 +1136,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set([]);
+        const activeItems = new Set(["torso", "pernas", "biquini1", "face1", "cabelo1"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1084,7 +1176,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 0;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">0%</div>                </div>
+                                        <div class="circular-progress" style="--prog: 40;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">40%</div>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 
@@ -1097,7 +1189,7 @@
         <div class="cutout-price-box">
             <div class="c2-cutout-strip">
                 <span>Total:</span>
-                <span class="c2-slash-price">R$ 220,00</span>
+                <span class="c2-slash-price">R$ 250,00</span>
             </div>
 
             <div class="price-container">
@@ -1108,7 +1200,7 @@
             </div>
         </div>
 
-        <a href="https://nubank.com.br/cobrar/seu-link-aqui" target="_blank" class="btn-action" id="pay-btn">
+        <a href="https://nubank.com.br/cobrar/3avuif/6ac6f3ee-b91e-4af8-b759-2d41f40d5d7e" target="_blank" class="btn-action" id="pay-btn">
             <span class="btn-content">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
                     <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>

@@ -2,11 +2,10 @@
   "projeto": "Conexão RP",
   "descricao": "Guarda-roupa completo e funcional focado em performance mobile e integração sem conflitos de malha.",
   "orcamento": {
-    "valor_final": "R$ 220,00",
-    "link_pagamento": "https://nubank.com.br/cobrar/seu-link-aqui",
+    "valor_final": "R$ 250,00",
+    "link_pagamento": "https://nubank.com.br/cobrar/3avuif/6ac6f3ee-b91e-4af8-b759-2d41f40d5d7e",
     "pago": false,
     "link_download": "https://drive.google.com/drive/folders/seu-link-aqui",
-    "sinal_pago": "R$ 100,00",
     "valor_restante": "R$ 120,00"
   },
   "skins": [
@@ -15,22 +14,68 @@
       "titulo": "Skin Base",
       "grupos": [
         {
+          "id": "corpo",
+          "exclusive": false,
+          "titulo": "🙇‍♀️ Corpo",
+          "itens": [
+            {
+              "id": "torso",
+              "nome": "BRACOS (COMPLETO)",
+              "texturas": {
+                "fbracos1a": "#b08060",
+                "fbracos1b": "#888888",
+                "fbracos1c": "#888888"
+              },
+              "obs": "Base",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true
+            },
+            {
+              "id": "pernas",
+              "nome": "PERNAS (COMPLETO)",
+              "texturas": {
+                "fpernas1a": "#b08060",
+                "fpernas1b": "#888888",
+                "fpernas1c": "#888888"
+              },
+              "obs": "Base",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true
+            },
+            {
+              "id": "biquini1",
+              "nome": "BIQUINI",
+              "texturas": {
+                "biquini1b": "#101010",
+                "biquini1a": "#b0b0b0",
+                "biquini1c": "#a02020"
+              },
+              "obs": "Base",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true
+            }
+          ]
+        },
+        {
           "id": "rostos",
           "exclusive": true,
           "titulo": "👩 Rostos",
           "itens": [
             {
-              "id": "rosto_1",
+              "id": "face1",
               "nome": "ROSTO 1",
               "texturas": {
-                "rosto1_t1": "#888888",
-                "rosto1_t2": "#888888",
-                "rosto1_t3": "#888888"
+                "ffacek1a": "#b08060",
+                "ffacek1b": "#888888",
+                "ffacek1c": "#888888"
               },
               "obs": "Base",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true
             },
             {
               "id": "rosto_2",
@@ -53,29 +98,29 @@
           "titulo": "💇‍♀️ Cabelos",
           "itens": [
             {
-              "id": "cabelo_1",
+              "id": "cabelo1",
               "nome": "CABELO 1",
               "texturas": {
-                "cabelo1_t1": "#888888",
-                "cabelo1_t2": "#888888",
-                "cabelo1_t3": "#888888"
+                "fcabelo1a": "#000000",
+                "fcabelo1b": "#b09060",
+                "fcabelo1c": "#201010"
               },
               "obs": "3 Cores",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true
             },
             {
-              "id": "cabelo_2",
+              "id": "cabelo2",
               "nome": "CABELO 2",
               "texturas": {
-                "cabelo2_t1": "#888888",
-                "cabelo2_t2": "#888888",
-                "cabelo2_t3": "#888888"
+                "fcabelo2a": "#000000",
+                "fcabelo2b": "#b09060",
+                "fcabelo2c": "#201010"
               },
               "obs": "3 Cores",
-              "concluido": false,
-              "status": "pend",
+              "concluido": true,
+              "status": "done",
               "visivel_padrao": false
             }
           ]
