@@ -646,7 +646,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 50;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">50%</div>                </div>
+                <div class="circular-progress" style="--prog: 56;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">56%</div>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -820,6 +820,35 @@
                         "color": "#000000"
                     }
                 ]
+            },
+            {
+                "id": "torso_crop_top",
+                "dff_id": "Não definido",
+                "name": "BRACOS (DA CROP)",
+                "status": "done",
+                "texturas_names": [
+                    "fbracos1a",
+                    "fbracos1b",
+                    "fbracos1c"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "fbracos1a.png",
+                        "color": "#b08060"
+                    },
+                    {
+                        "file": "fbracos1b.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "fbracos1c.png",
+                        "color": "#888888"
+                    }
+                ]
             }
         ]
     },
@@ -902,9 +931,9 @@
                 "name": "CABELO 1",
                 "status": "done",
                 "texturas_names": [
-                    "fcabelo1a",
+                    "fcabelo1c",
                     "fcabelo1b",
-                    "fcabelo1c"
+                    "fcabelo1a"
                 ],
                 "malhas": [
                     "cabelo1"
@@ -914,16 +943,16 @@
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "fcabelo1a.png",
-                        "color": "#000000"
+                        "file": "fcabelo1c.png",
+                        "color": "#201010"
                     },
                     {
                         "file": "fcabelo1b.png",
                         "color": "#b09060"
                     },
                     {
-                        "file": "fcabelo1c.png",
-                        "color": "#201010"
+                        "file": "fcabelo1a.png",
+                        "color": "#000000"
                     }
                 ]
             },
@@ -965,28 +994,35 @@
         "exclusive": true,
         "items": [
             {
-                "id": "camiseta",
+                "id": "crop_top",
                 "dff_id": "19",
-                "name": "CAMISETA",
-                "status": "pend",
+                "name": "CROP TOP",
+                "status": "done",
                 "texturas_names": [
-                    "camisa_t1",
-                    "camisa_t2"
+                    "croptop1h",
+                    "croptop1c",
+                    "croptop1o"
                 ],
                 "malhas": [
-                    "camiseta"
+                    "torso_crop_top"
                 ],
                 "hides": [],
-                "cond_malhas": {},
+                "cond_malhas": {
+                    "torso": "torso_crop_top"
+                },
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "camisa_t1.png",
-                        "color": "#888888"
+                        "file": "croptop1h.png",
+                        "color": "#202020"
                     },
                     {
-                        "file": "camisa_t2.png",
-                        "color": "#888888"
+                        "file": "croptop1c.png",
+                        "color": "#a0b0c0"
+                    },
+                    {
+                        "file": "croptop1o.png",
+                        "color": "#f070a0"
                     }
                 ]
             },
@@ -1081,7 +1117,8 @@
                 "status": "done",
                 "texturas_names": [
                     "saiajeans1h",
-                    "saiajeans1g"
+                    "saiajeans1g",
+                    "saiajeans1q"
                 ],
                 "malhas": [
                     "saia_jeans"
@@ -1097,6 +1134,10 @@
                     {
                         "file": "saiajeans1g.png",
                         "color": "#304070"
+                    },
+                    {
+                        "file": "saiajeans1q.png",
+                        "color": "#202020"
                     }
                 ]
             }
@@ -1195,7 +1236,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["torso", "pernas", "biquini1", "face1", "cabelo1", "saia_jeans"]);
+        const activeItems = new Set(["torso", "pernas", "biquini1", "face1", "cabelo1", "crop_top", "saia_jeans"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1235,7 +1276,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 50;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">50%</div>                </div>
+                                        <div class="circular-progress" style="--prog: 56;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">56%</div>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 

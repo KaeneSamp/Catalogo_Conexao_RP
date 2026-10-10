@@ -166,9 +166,10 @@
               "id": "cabelo1",
               "nome": "CABELO 1",
               "texturas": {
-                "fcabelo1a": "#000000",
+
+                "fcabelo1c": "#201010",
                 "fcabelo1b": "#b09060",
-                "fcabelo1c": "#201010"
+                "fcabelo1a": "#000000"
               },
               "obs": "3 Cores",
               "concluido": true,
@@ -214,19 +215,21 @@
           "resumo_texturas": "A definir",
           "itens": [
             {
-              "id": "camiseta",
-              "nome": "CAMISETA",
+              "id": "crop_top",
+              "nome": "CROP TOP",
               "texturas": {
-                "camisa_t1": "#888888",
-                "camisa_t2": "#888888"
+
+                "croptop1h": "#202020",
+                "croptop1c": "#a0b0c0",
+                "croptop1o": "#f070a0"
               },
               "obs": "Básica",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false,
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true,
               "dff_id": "19",
               "malhas": [
-                "camiseta"
+                "torso_crop_top"
               ],
               "hides": [],
               "triangulos": []
@@ -299,7 +302,8 @@
               "nome": "SAIA",
               "texturas": {
                 "saiajeans1h": "#b0c0d0",
-                "saiajeans1g": "#304070"
+                "saiajeans1g": "#304070",
+                "saiajeans1q": "#202020"
               },
               "obs": "Casual",
               "concluido": true,
