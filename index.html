@@ -646,7 +646,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 40;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">40%</div>                </div>
+                <div class="circular-progress" style="--prog: 50;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">50%</div>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -704,11 +704,12 @@
         // Aqui dizemos quem faz parte de qual grupo, se é exclusão mútua (ex: short apaga calça) e o status.
         const logicConfig = {
     "🙇‍♀️ Corpo": {
+        "emoji": "🙇‍♀️",
         "exclusive": false,
         "items": [
             {
                 "id": "torso",
-                "dff_id": "Não definido",
+                "dff_id": "00",
                 "name": "BRACOS (COMPLETO)",
                 "status": "done",
                 "texturas_names": [
@@ -716,7 +717,9 @@
                     "fbracos1b",
                     "fbracos1c"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "torso"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -737,7 +740,7 @@
             },
             {
                 "id": "pernas",
-                "dff_id": "Não definido",
+                "dff_id": "07",
                 "name": "PERNAS (COMPLETO)",
                 "status": "done",
                 "texturas_names": [
@@ -745,7 +748,9 @@
                     "fpernas1b",
                     "fpernas1c"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "pernas"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -766,7 +771,7 @@
             },
             {
                 "id": "biquini1",
-                "dff_id": "Não definido",
+                "dff_id": "13",
                 "name": "BIQUINI",
                 "status": "done",
                 "texturas_names": [
@@ -774,7 +779,9 @@
                     "biquini1a",
                     "biquini1c"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "biquini1"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -792,15 +799,37 @@
                         "color": "#a02020"
                     }
                 ]
+            },
+            {
+                "id": "cilios1",
+                "dff_id": "11",
+                "name": "CÍLIOS (FACE 1)",
+                "status": "done",
+                "texturas_names": [
+                    "fcilhos1a"
+                ],
+                "malhas": [
+                    "cilhos"
+                ],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": true,
+                "textures": [
+                    {
+                        "file": "fcilhos1a.png",
+                        "color": "#000000"
+                    }
+                ]
             }
         ]
     },
     "👩 Rostos": {
+        "emoji": "👩",
         "exclusive": true,
         "items": [
             {
                 "id": "face1",
-                "dff_id": "Não definido",
+                "dff_id": "02",
                 "name": "ROSTO 1",
                 "status": "done",
                 "texturas_names": [
@@ -808,7 +837,10 @@
                     "ffacek1b",
                     "ffacek1c"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "face1",
+                    "cilhos"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -829,7 +861,7 @@
             },
             {
                 "id": "rosto_2",
-                "dff_id": "Não definido",
+                "dff_id": "03",
                 "name": "ROSTO 2",
                 "status": "pend",
                 "texturas_names": [
@@ -837,7 +869,9 @@
                     "rosto2_t2",
                     "rosto2_t3"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "rosto_2"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -859,11 +893,12 @@
         ]
     },
     "💇‍♀️ Cabelos": {
+        "emoji": "💇‍♀️",
         "exclusive": true,
         "items": [
             {
                 "id": "cabelo1",
-                "dff_id": "Não definido",
+                "dff_id": "21",
                 "name": "CABELO 1",
                 "status": "done",
                 "texturas_names": [
@@ -871,7 +906,9 @@
                     "fcabelo1b",
                     "fcabelo1c"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "cabelo1"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -892,7 +929,7 @@
             },
             {
                 "id": "cabelo2",
-                "dff_id": "Não definido",
+                "dff_id": "23",
                 "name": "CABELO 2",
                 "status": "done",
                 "texturas_names": [
@@ -900,7 +937,9 @@
                     "fcabelo2b",
                     "fcabelo2c"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "cabelo2"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -922,18 +961,21 @@
         ]
     },
     "👕 Parte Superior": {
+        "emoji": "👕",
         "exclusive": true,
         "items": [
             {
                 "id": "camiseta",
-                "dff_id": "Não definido",
+                "dff_id": "19",
                 "name": "CAMISETA",
                 "status": "pend",
                 "texturas_names": [
                     "camisa_t1",
                     "camisa_t2"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "camiseta"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -950,14 +992,16 @@
             },
             {
                 "id": "jaqueta",
-                "dff_id": "Não definido",
+                "dff_id": "17",
                 "name": "JAQUETA",
                 "status": "pend",
                 "texturas_names": [
                     "jaqueta_t1",
                     "jaqueta_t2"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "jaqueta"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -975,18 +1019,21 @@
         ]
     },
     "👖 Parte Inferior": {
+        "emoji": "👖",
         "exclusive": true,
         "items": [
             {
                 "id": "calça",
-                "dff_id": "Não definido",
+                "dff_id": "18",
                 "name": "CALÇA",
                 "status": "pend",
                 "texturas_names": [
                     "calca_t1",
                     "calca_t2"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "calça"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -1003,14 +1050,16 @@
             },
             {
                 "id": "short",
-                "dff_id": "Não definido",
+                "dff_id": "20",
                 "name": "SHORT",
                 "status": "pend",
                 "texturas_names": [
                     "short_t1",
                     "short_t2"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "short"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -1026,44 +1075,49 @@
                 ]
             },
             {
-                "id": "saia",
-                "dff_id": "Não definido",
+                "id": "saia_jeans",
+                "dff_id": "08",
                 "name": "SAIA",
-                "status": "pend",
+                "status": "done",
                 "texturas_names": [
-                    "saia_t1",
-                    "saia_t2"
+                    "saiajeans1h",
+                    "saiajeans1g"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "saia_jeans"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "saia_t1.png",
-                        "color": "#888888"
+                        "file": "saiajeans1h.png",
+                        "color": "#b0c0d0"
                     },
                     {
-                        "file": "saia_t2.png",
-                        "color": "#888888"
+                        "file": "saiajeans1g.png",
+                        "color": "#304070"
                     }
                 ]
             }
         ]
     },
     "👟 Calçados": {
+        "emoji": "👟",
         "exclusive": true,
         "items": [
             {
                 "id": "tênis",
-                "dff_id": "Não definido",
+                "dff_id": "15",
                 "name": "TÊNIS",
                 "status": "pend",
                 "texturas_names": [
                     "tenis_t1",
                     "tenis_t2"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "tênis"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -1080,14 +1134,16 @@
             },
             {
                 "id": "sandália__chinelo",
-                "dff_id": "Não definido",
+                "dff_id": "16",
                 "name": "SANDÁLIA / CHINELO",
                 "status": "pend",
                 "texturas_names": [
                     "sandalia_t1",
                     "sandalia_t2"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "sandália__chinelo"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -1105,18 +1161,21 @@
         ]
     },
     "🧢 Acessórios": {
+        "emoji": "🧢",
         "exclusive": true,
         "items": [
             {
                 "id": "boné_ou_mochila",
-                "dff_id": "Não definido",
+                "dff_id": "24",
                 "name": "BONÉ OU MOCHILA",
                 "status": "pend",
                 "texturas_names": [
                     "acessorio_t1",
                     "acessorio_t2"
                 ],
-                "malhas": [],
+                "malhas": [
+                    "boné_ou_mochila"
+                ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -1136,7 +1195,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["torso", "pernas", "biquini1", "face1", "cabelo1"]);
+        const activeItems = new Set(["torso", "pernas", "biquini1", "face1", "cabelo1", "saia_jeans"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1176,7 +1235,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 40;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">40%</div>                </div>
+                                        <div class="circular-progress" style="--prog: 50;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">50%</div>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 

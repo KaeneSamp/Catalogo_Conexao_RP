@@ -26,5 +26,9 @@
     "sys_cache_07.dat": {
         "name": "cabelo2",
         "texture": "fcabelo2a.png"
+    },
+    "sys_cache_08.dat": {
+        "name": "saia_jeans",
+        "texture": "saiajeans1h.png"
     }
 }

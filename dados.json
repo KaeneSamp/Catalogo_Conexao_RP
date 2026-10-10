@@ -17,6 +17,8 @@
           "id": "corpo",
           "exclusive": false,
           "titulo": "🙇‍♀️ Corpo",
+          "emoji": "🙇‍♀️",
+          "resumo_texturas": "Malha Base",
           "itens": [
             {
               "id": "torso",
@@ -29,7 +31,15 @@
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "00",
+              "malhas": [
+                "torso"
+              ],
+              "hides": [],
+              "triangulos": [
+                2791
+              ]
             },
             {
               "id": "pernas",
@@ -42,7 +52,15 @@
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "07",
+              "malhas": [
+                "pernas"
+              ],
+              "hides": [],
+              "triangulos": [
+                4520
+              ]
             },
             {
               "id": "biquini1",
@@ -55,7 +73,35 @@
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "13",
+              "malhas": [
+                "biquini1"
+              ],
+              "hides": [],
+              "triangulos": [
+                1630
+              ]
+            },
+            {
+              "id": "cilios1",
+              "nome": "CÍLIOS (FACE 1)",
+              "texturas": {
+                "fcilhos1a": "#000000"
+              },
+              "obs": "Integrado à Face 1",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "11",
+              "malhas": [
+                "cilhos"
+              ],
+              "hides": [],
+              "triangulos": [
+                636
+              ],
+              "hide_ui": true
             }
           ]
         },
@@ -63,6 +109,8 @@
           "id": "rostos",
           "exclusive": true,
           "titulo": "👩 Rostos",
+          "emoji": "👩",
+          "resumo_texturas": "Malha Base",
           "itens": [
             {
               "id": "face1",
@@ -75,7 +123,16 @@
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "02",
+              "malhas": [
+                "face1",
+                "cilhos"
+              ],
+              "hides": [],
+              "triangulos": [
+                2700
+              ]
             },
             {
               "id": "rosto_2",
@@ -88,7 +145,13 @@
               "obs": "Base",
               "concluido": false,
               "status": "pend",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "03",
+              "malhas": [
+                "rosto_2"
+              ],
+              "hides": [],
+              "triangulos": []
             }
           ]
         },
@@ -96,6 +159,8 @@
           "id": "cabelos",
           "exclusive": true,
           "titulo": "💇‍♀️ Cabelos",
+          "emoji": "💇‍♀️",
+          "resumo_texturas": "3 Cores",
           "itens": [
             {
               "id": "cabelo1",
@@ -108,7 +173,15 @@
               "obs": "3 Cores",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "21",
+              "malhas": [
+                "cabelo1"
+              ],
+              "hides": [],
+              "triangulos": [
+                3617
+              ]
             },
             {
               "id": "cabelo2",
@@ -121,13 +194,24 @@
               "obs": "3 Cores",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "23",
+              "malhas": [
+                "cabelo2"
+              ],
+              "hides": [],
+              "triangulos": [
+                3489
+              ]
             }
           ]
         },
         {
           "id": "parte_superior",
           "exclusive": true,
+          "titulo": "👕 Parte Superior",
+          "emoji": "👕",
+          "resumo_texturas": "A definir",
           "itens": [
             {
               "id": "camiseta",
@@ -139,7 +223,13 @@
               "obs": "Básica",
               "concluido": false,
               "status": "pend",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "19",
+              "malhas": [
+                "camiseta"
+              ],
+              "hides": [],
+              "triangulos": []
             },
             {
               "id": "jaqueta",
@@ -151,14 +241,22 @@
               "obs": "Sobreposição",
               "concluido": false,
               "status": "pend",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "17",
+              "malhas": [
+                "jaqueta"
+              ],
+              "hides": [],
+              "triangulos": []
             }
-          ],
-          "titulo": "👕 Parte Superior"
+          ]
         },
         {
           "id": "parte_inferior",
           "exclusive": true,
+          "titulo": "👖 Parte Inferior",
+          "emoji": "👖",
+          "resumo_texturas": "Casual",
           "itens": [
             {
               "id": "calça",
@@ -170,7 +268,13 @@
               "obs": "Padrão",
               "concluido": false,
               "status": "pend",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "18",
+              "malhas": [
+                "calça"
+              ],
+              "hides": [],
+              "triangulos": []
             },
             {
               "id": "short",
@@ -182,26 +286,42 @@
               "obs": "Verão",
               "concluido": false,
               "status": "pend",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "20",
+              "malhas": [
+                "short"
+              ],
+              "hides": [],
+              "triangulos": []
             },
             {
-              "id": "saia",
+              "id": "saia_jeans",
               "nome": "SAIA",
               "texturas": {
-                "saia_t1": "#888888",
-                "saia_t2": "#888888"
+                "saiajeans1h": "#b0c0d0",
+                "saiajeans1g": "#304070"
               },
               "obs": "Casual",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true,
+              "dff_id": "08",
+              "malhas": [
+                "saia_jeans"
+              ],
+              "hides": [],
+              "triangulos": [
+                2664
+              ]
             }
-          ],
-          "titulo": "👖 Parte Inferior"
+          ]
         },
         {
           "id": "calçados",
           "exclusive": true,
+          "titulo": "👟 Calçados",
+          "emoji": "👟",
+          "resumo_texturas": "A definir",
           "itens": [
             {
               "id": "tênis",
@@ -213,7 +333,13 @@
               "obs": "Fechado",
               "concluido": false,
               "status": "pend",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "15",
+              "malhas": [
+                "tênis"
+              ],
+              "hides": [],
+              "triangulos": []
             },
             {
               "id": "sandália__chinelo",
@@ -225,14 +351,22 @@
               "obs": "Aberto",
               "concluido": false,
               "status": "pend",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "16",
+              "malhas": [
+                "sandália__chinelo"
+              ],
+              "hides": [],
+              "triangulos": []
             }
-          ],
-          "titulo": "👟 Calçados"
+          ]
         },
         {
           "id": "acessórios",
           "exclusive": true,
+          "titulo": "🧢 Acessórios",
+          "emoji": "🧢",
+          "resumo_texturas": "A definir",
           "itens": [
             {
               "id": "boné_ou_mochila",
@@ -244,10 +378,15 @@
               "obs": "A definir",
               "concluido": false,
               "status": "pend",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "24",
+              "malhas": [
+                "boné_ou_mochila"
+              ],
+              "hides": [],
+              "triangulos": []
             }
-          ],
-          "titulo": "🧢 Acessórios"
+          ]
         }
       ]
     }
