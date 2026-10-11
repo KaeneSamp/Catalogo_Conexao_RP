@@ -226,7 +226,7 @@
               "obs": "Básica",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true,
+              "visivel_padrao": false,
               "dff_id": "19",
               "malhas": [
                 "torso_crop_top"
@@ -235,19 +235,21 @@
               "triangulos": []
             },
             {
-              "id": "jaqueta",
-              "nome": "JAQUETA",
+              "id": "vestido",
+              "nome": "VESTIDO CAMPONESA",
               "texturas": {
-                "jaqueta_t1": "#888888",
-                "jaqueta_t2": "#888888"
+                "vestido1aa": "#403020",
+                "vestido1w": "#a0b0c0",
+                "vestido1o": "#101010"
               },
-              "obs": "Sobreposição",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false,
+              "obs": "3 Cores",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true,
               "dff_id": "17",
               "malhas": [
-                "jaqueta"
+                "pernas_vestido",
+                "torso_vestido"
               ],
               "hides": [],
               "triangulos": []
@@ -299,7 +301,7 @@
             },
             {
               "id": "saia_jeans",
-              "nome": "SAIA",
+              "nome": "SAIA JEANS",
               "texturas": {
                 "saiajeans1h": "#b0c0d0",
                 "saiajeans1g": "#304070",
@@ -308,7 +310,7 @@
               "obs": "Casual",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true,
+              "visivel_padrao": false,
               "dff_id": "08",
               "malhas": [
                 "saia_jeans"

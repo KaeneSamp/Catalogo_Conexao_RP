@@ -646,7 +646,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 56;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">56%</div>                </div>
+                <div class="circular-progress" style="--prog: 62;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">62%</div>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -849,6 +849,64 @@
                         "color": "#888888"
                     }
                 ]
+            },
+            {
+                "id": "torso_vestido",
+                "dff_id": "Não definido",
+                "name": "BRACOS (DA VESTIDO)",
+                "status": "done",
+                "texturas_names": [
+                    "fbracos1a",
+                    "fbracos1b",
+                    "fbracos1c"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "fbracos1a.png",
+                        "color": "#b08060"
+                    },
+                    {
+                        "file": "fbracos1b.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "fbracos1c.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "pernas_vestido",
+                "dff_id": "Não definido",
+                "name": "PERNAS (DA VESTIDO)",
+                "status": "done",
+                "texturas_names": [
+                    "fpernas1a",
+                    "fpernas1b",
+                    "fpernas1c"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "fpernas1a.png",
+                        "color": "#b08060"
+                    },
+                    {
+                        "file": "fpernas1b.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "fpernas1c.png",
+                        "color": "#888888"
+                    }
+                ]
             }
         ]
     },
@@ -1027,28 +1085,37 @@
                 ]
             },
             {
-                "id": "jaqueta",
+                "id": "vestido",
                 "dff_id": "17",
-                "name": "JAQUETA",
-                "status": "pend",
+                "name": "VESTIDO CAMPONESA",
+                "status": "done",
                 "texturas_names": [
-                    "jaqueta_t1",
-                    "jaqueta_t2"
+                    "vestido1aa",
+                    "vestido1w",
+                    "vestido1o"
                 ],
                 "malhas": [
-                    "jaqueta"
+                    "pernas_vestido",
+                    "torso_vestido"
                 ],
                 "hides": [],
-                "cond_malhas": {},
+                "cond_malhas": {
+                    "torso": "torso_vestido",
+                    "pernas": "pernas_vestido"
+                },
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "jaqueta_t1.png",
-                        "color": "#888888"
+                        "file": "vestido1aa.png",
+                        "color": "#403020"
                     },
                     {
-                        "file": "jaqueta_t2.png",
-                        "color": "#888888"
+                        "file": "vestido1w.png",
+                        "color": "#a0b0c0"
+                    },
+                    {
+                        "file": "vestido1o.png",
+                        "color": "#101010"
                     }
                 ]
             }
@@ -1113,7 +1180,7 @@
             {
                 "id": "saia_jeans",
                 "dff_id": "08",
-                "name": "SAIA",
+                "name": "SAIA JEANS",
                 "status": "done",
                 "texturas_names": [
                     "saiajeans1h",
@@ -1236,7 +1303,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["torso", "pernas", "biquini1", "face1", "cabelo1", "crop_top", "saia_jeans"]);
+        const activeItems = new Set(["torso", "pernas", "biquini1", "face1", "cabelo1", "vestido"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1276,7 +1343,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 56;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">56%</div>                </div>
+                                        <div class="circular-progress" style="--prog: 62;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">62%</div>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 
