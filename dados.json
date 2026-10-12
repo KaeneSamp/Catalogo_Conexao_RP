@@ -113,10 +113,10 @@
               "obs": "Integrado à Face 1",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false,
+              "visivel_padrao": true,
               "dff_id": "11",
               "malhas": [
-                "cilhos"
+                "cilios1"
               ],
               "hides": [],
               "triangulos": [
@@ -148,7 +148,7 @@
               "dff_id": "02",
               "malhas": [
                 "face1",
-                "cilhos"
+                "cilios1"
               ],
               "hides": [],
               "triangulos": [

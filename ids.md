@@ -5,10 +5,10 @@
 | ID DFF | Status | Grupo | Acessório | Texturas | Adaptações Automáticas | Obs |
 |:---|:---|:---|:---|:---|:---|:---|
 | **00** | ✅ | 👙 Corpo | **BRACOS (COMPLETO)** | `fbracos1a`, `fbracos1b`, `fbracos1c` | Requer ID `00` | Base |
-| **02** | ✅ | 👩 Rostos | **ROSTO 1** | `ffacek1a`, `ffacek1b`, `ffacek1c` | Requer ID `02`<br>Requer ID `cilhos` | Base |
+| **02** | ✅ | 👩 Rostos | **ROSTO 1** | `ffacek1a`, `ffacek1b`, `ffacek1c` | Requer ID `02`<br>Requer ID `11` | Base |
 | **07** | ✅ | 👙 Corpo | **PERNAS (COMPLETO)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `07` | Base |
 | **08** | ✅ | 👖 Roupas Inferiores | **SAIA JEANS** | `saiajeans1h`, `saiajeans1g`, `saiajeans1q` | Requer ID `08` | Casual |
-| **11** | ✅ | 👙 Corpo | **CÍLIOS (FACE 1)** | `fcilhos1a` | Requer ID `cilhos` | Integrado à Face 1 |
+| **11** | ✅ | 👙 Corpo | **CÍLIOS (FACE 1)** | `fcilhos1a` | Requer ID `11` | Integrado à Face 1 |
 | **12** | ✅ | 👚 Roupas Superiores | **REGATA BÁSICA** | `fregatacnl1m`, `fregatacnl1c`, `fregatacnl1d` | Se ID `00` -> Usar ID `torso_regata`<br>Requer ID `torso_regata` | Básica |
 | **13** | ✅ | 👙 Corpo | **BIQUINI1 (TOP)** | `biquini1b`, `biquini1a`, `biquini1c` | Requer ID `13` | Base |
 | **14** | ✅ | 👙 Corpo | **BIQUINI1 (BOTTOM)** | `biquini1b`, `biquini1a`, `biquini1c` | Requer ID `14` | Base |
