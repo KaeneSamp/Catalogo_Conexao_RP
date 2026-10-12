@@ -231,8 +231,8 @@
         {
           "id": "parte_superior",
           "exclusive": true,
-          "titulo": "👕 Parte Superior",
-          "emoji": "👕",
+          "titulo": "👚 Roupas Superiores",
+          "emoji": "👚",
           "resumo_texturas": "A definir",
           "itens": [
             {
@@ -299,7 +299,7 @@
         {
           "id": "parte_inferior",
           "exclusive": true,
-          "titulo": "👖 Parte Inferior",
+          "titulo": "👖 Roupas Inferiores",
           "emoji": "👖",
           "resumo_texturas": "Casual",
           "itens": [
@@ -349,8 +349,8 @@
         {
           "id": "calçados",
           "exclusive": true,
-          "titulo": "👟 Calçados",
-          "emoji": "👟",
+          "titulo": "👠 Calçados",
+          "emoji": "👠",
           "resumo_texturas": "A definir",
           "itens": [
             {
@@ -394,8 +394,8 @@
         {
           "id": "acessórios",
           "exclusive": true,
-          "titulo": "🧢 Acessórios",
-          "emoji": "🧢",
+          "titulo": "👒 Acessórios",
+          "emoji": "👒",
           "resumo_texturas": "A definir",
           "itens": [
             {
