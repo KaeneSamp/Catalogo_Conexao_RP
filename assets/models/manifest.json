@@ -5,7 +5,7 @@
     },
     "sys_cache_02.dat": {
         "name": "cilios1",
-        "texture": "fcilhos1a.png"
+        "texture": "fcilios1a.png"
     },
     "sys_cache_03.dat": {
         "name": "torso",
@@ -77,7 +77,7 @@
     },
     "sys_cache_20.dat": {
         "name": "allstar",
-        "texture": "allstar1al.png"
+        "texture": "allstar1a.png"
     },
     "sys_cache_21.dat": {
         "name": "pernas_allstar",
