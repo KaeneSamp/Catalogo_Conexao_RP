@@ -63,8 +63,8 @@
               ]
             },
             {
-              "id": "biquini1",
-              "nome": "BIQUINI",
+              "id": "sutia",
+              "nome": "BIQUINI1 (TOP)",
               "texturas": {
                 "biquini1b": "#101010",
                 "biquini1a": "#b0b0b0",
@@ -76,7 +76,28 @@
               "visivel_padrao": true,
               "dff_id": "13",
               "malhas": [
-                "biquini1"
+                "sutia"
+              ],
+              "hides": [],
+              "triangulos": [
+                1630
+              ]
+            },
+            {
+              "id": "calcinha",
+              "nome": "BIQUINI1 (BOTTOM)",
+              "texturas": {
+                "biquini1b": "#101010",
+                "biquini1a": "#b0b0b0",
+                "biquini1c": "#a02020"
+              },
+              "obs": "Base",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true,
+              "dff_id": "14",
+              "malhas": [
+                "calcinha"
               ],
               "hides": [],
               "triangulos": [
@@ -226,7 +247,7 @@
               "obs": "Básica",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false,
+              "visivel_padrao": true,
               "dff_id": "19",
               "malhas": [
                 "torso_crop_top"
@@ -245,7 +266,7 @@
               "obs": "3 Cores",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true,
+              "visivel_padrao": false,
               "dff_id": "17",
               "malhas": [
                 "pernas_vestido",
@@ -264,19 +285,21 @@
           "resumo_texturas": "Casual",
           "itens": [
             {
-              "id": "calça",
+              "id": "calca",
               "nome": "CALÇA",
               "texturas": {
-                "calca_t1": "#888888",
-                "calca_t2": "#888888"
+                "fcalca1a": "#808080",
+                "fcalca1b": "#101010",
+                "fcalca1c": "#405060",
+                "fcalca1d": "#602030"
               },
               "obs": "Padrão",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false,
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true,
               "dff_id": "18",
               "malhas": [
-                "calça"
+                "calca"
               ],
               "hides": [],
               "triangulos": []

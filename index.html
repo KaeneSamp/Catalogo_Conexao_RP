@@ -646,7 +646,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 62;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">62%</div>                </div>
+                <div class="circular-progress" style="--prog: 71;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">71%</div>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -770,9 +770,9 @@
                 ]
             },
             {
-                "id": "biquini1",
+                "id": "sutia",
                 "dff_id": "13",
-                "name": "BIQUINI",
+                "name": "BIQUINI1 (TOP)",
                 "status": "done",
                 "texturas_names": [
                     "biquini1b",
@@ -780,7 +780,38 @@
                     "biquini1c"
                 ],
                 "malhas": [
-                    "biquini1"
+                    "sutia"
+                ],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "biquini1b.png",
+                        "color": "#101010"
+                    },
+                    {
+                        "file": "biquini1a.png",
+                        "color": "#b0b0b0"
+                    },
+                    {
+                        "file": "biquini1c.png",
+                        "color": "#a02020"
+                    }
+                ]
+            },
+            {
+                "id": "calcinha",
+                "dff_id": "14",
+                "name": "BIQUINI1 (BOTTOM)",
+                "status": "done",
+                "texturas_names": [
+                    "biquini1b",
+                    "biquini1a",
+                    "biquini1c"
+                ],
+                "malhas": [
+                    "calcinha"
                 ],
                 "hides": [],
                 "cond_malhas": {},
@@ -883,6 +914,35 @@
                 "id": "pernas_vestido",
                 "dff_id": "Não definido",
                 "name": "PERNAS (DA VESTIDO)",
+                "status": "done",
+                "texturas_names": [
+                    "fpernas1a",
+                    "fpernas1b",
+                    "fpernas1c"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "fpernas1a.png",
+                        "color": "#b08060"
+                    },
+                    {
+                        "file": "fpernas1b.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "fpernas1c.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
+                "id": "pernas_calca",
+                "dff_id": "Não definido",
+                "name": "PERNAS (DA CALÇA)",
                 "status": "done",
                 "texturas_names": [
                     "fpernas1a",
@@ -1126,28 +1186,40 @@
         "exclusive": true,
         "items": [
             {
-                "id": "calça",
+                "id": "calca",
                 "dff_id": "18",
                 "name": "CALÇA",
-                "status": "pend",
+                "status": "done",
                 "texturas_names": [
-                    "calca_t1",
-                    "calca_t2"
+                    "fcalca1a",
+                    "fcalca1b",
+                    "fcalca1c",
+                    "fcalca1d"
                 ],
                 "malhas": [
-                    "calça"
+                    "calca"
                 ],
                 "hides": [],
-                "cond_malhas": {},
+                "cond_malhas": {
+                    "pernas": "pernas_calca"
+                },
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "calca_t1.png",
-                        "color": "#888888"
+                        "file": "fcalca1a.png",
+                        "color": "#808080"
                     },
                     {
-                        "file": "calca_t2.png",
-                        "color": "#888888"
+                        "file": "fcalca1b.png",
+                        "color": "#101010"
+                    },
+                    {
+                        "file": "fcalca1c.png",
+                        "color": "#405060"
+                    },
+                    {
+                        "file": "fcalca1d.png",
+                        "color": "#602030"
                     }
                 ]
             },
@@ -1303,7 +1375,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["torso", "pernas", "biquini1", "face1", "cabelo1", "vestido"]);
+        const activeItems = new Set(["torso", "pernas", "sutia", "calcinha", "face1", "cabelo1", "crop_top", "calca"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1343,7 +1415,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 62;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">62%</div>                </div>
+                                        <div class="circular-progress" style="--prog: 71;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">71%</div>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 

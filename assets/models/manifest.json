@@ -16,38 +16,50 @@
         "texture": "fpernas1a.png"
     },
     "sys_cache_05.dat": {
-        "name": "biquini1",
+        "name": "sutia",
         "texture": "biquini1b.png"
     },
     "sys_cache_06.dat": {
+        "name": "calcinha",
+        "texture": "biquini1b.png"
+    },
+    "sys_cache_07.dat": {
         "name": "torso_crop_top",
         "texture": "fbracos1a.png"
     },
-    "sys_cache_07.dat": {
-        "name": "crop_top",
-        "texture": "croptop1c.png"
-    },
     "sys_cache_08.dat": {
+        "name": "crop_top",
+        "texture": "croptop1o.png"
+    },
+    "sys_cache_09.dat": {
         "name": "vestido",
         "texture": "vestido1aa.png"
     },
-    "sys_cache_09.dat": {
+    "sys_cache_10.dat": {
         "name": "torso_vestido",
         "texture": "fbracos1a.png"
     },
-    "sys_cache_10.dat": {
+    "sys_cache_11.dat": {
         "name": "pernas_vestido",
         "texture": "fpernas1a.png"
     },
-    "sys_cache_11.dat": {
+    "sys_cache_12.dat": {
         "name": "saia_jeans",
         "texture": "saiajeans1h.png"
     },
-    "sys_cache_12.dat": {
+    "sys_cache_13.dat": {
+        "name": "calca",
+        "texture": "fcalca1a.png"
+    },
+    "sys_cache_14.dat": {
+        "name": "pernas_calca",
+        "texture": "fpernas1a.png"
+    },
+    "sys_cache_15.dat": {
         "name": "cabelo1",
         "texture": "fcabelo1b.png"
     },
-    "sys_cache_13.dat": {
+    "sys_cache_16.dat": {
         "name": "cabelo2",
         "texture": "fcabelo2b.png"
     }
