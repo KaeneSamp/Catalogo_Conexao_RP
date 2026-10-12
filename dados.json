@@ -236,6 +236,25 @@
           "resumo_texturas": "A definir",
           "itens": [
             {
+              "id": "regata",
+              "nome": "REGATA BÁSICA",
+              "texturas": {
+                "fregatacnl1m": "#202020",
+                "fregatacnl1c": "#a0b0c0",
+                "fregatacnl1d": "#802020"
+              },
+              "obs": "Básica",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true,
+              "dff_id": "12",
+              "malhas": [
+                "torso_regata"
+              ],
+              "hides": [],
+              "triangulos": []
+            },
+            {
               "id": "crop_top",
               "nome": "CROP TOP",
               "texturas": {
@@ -247,7 +266,7 @@
               "obs": "Básica",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true,
+              "visivel_padrao": false,
               "dff_id": "19",
               "malhas": [
                 "torso_crop_top"
@@ -259,9 +278,9 @@
               "id": "vestido",
               "nome": "VESTIDO CAMPONESA",
               "texturas": {
-                "vestido1aa": "#403020",
+                "vestido1o": "#101010",
                 "vestido1w": "#a0b0c0",
-                "vestido1o": "#101010"
+                "vestido1aa": "#403020"
               },
               "obs": "3 Cores",
               "concluido": true,
@@ -300,24 +319,6 @@
               "dff_id": "18",
               "malhas": [
                 "calca"
-              ],
-              "hides": [],
-              "triangulos": []
-            },
-            {
-              "id": "short",
-              "nome": "SHORT",
-              "texturas": {
-                "short_t1": "#888888",
-                "short_t2": "#888888"
-              },
-              "obs": "Verão",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false,
-              "dff_id": "20",
-              "malhas": [
-                "short"
               ],
               "hides": [],
               "triangulos": []

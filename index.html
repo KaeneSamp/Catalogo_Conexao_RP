@@ -646,7 +646,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 71;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">71%</div>                </div>
+                <div class="circular-progress" style="--prog: 76;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">76%</div>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -940,6 +940,35 @@
                 ]
             },
             {
+                "id": "torso_regata",
+                "dff_id": "Não definido",
+                "name": "BRACOS (DA REGATA)",
+                "status": "done",
+                "texturas_names": [
+                    "fbracos1a",
+                    "fbracos1b",
+                    "fbracos1c"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "fbracos1a.png",
+                        "color": "#b08060"
+                    },
+                    {
+                        "file": "fbracos1b.png",
+                        "color": "#888888"
+                    },
+                    {
+                        "file": "fbracos1c.png",
+                        "color": "#888888"
+                    }
+                ]
+            },
+            {
                 "id": "pernas_calca",
                 "dff_id": "Não definido",
                 "name": "PERNAS (DA CALÇA)",
@@ -1112,6 +1141,39 @@
         "exclusive": true,
         "items": [
             {
+                "id": "regata",
+                "dff_id": "12",
+                "name": "REGATA BÁSICA",
+                "status": "done",
+                "texturas_names": [
+                    "fregatacnl1m",
+                    "fregatacnl1c",
+                    "fregatacnl1d"
+                ],
+                "malhas": [
+                    "torso_regata"
+                ],
+                "hides": [],
+                "cond_malhas": {
+                    "torso": "torso_regata"
+                },
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "fregatacnl1m.png",
+                        "color": "#202020"
+                    },
+                    {
+                        "file": "fregatacnl1c.png",
+                        "color": "#a0b0c0"
+                    },
+                    {
+                        "file": "fregatacnl1d.png",
+                        "color": "#802020"
+                    }
+                ]
+            },
+            {
                 "id": "crop_top",
                 "dff_id": "19",
                 "name": "CROP TOP",
@@ -1150,9 +1212,9 @@
                 "name": "VESTIDO CAMPONESA",
                 "status": "done",
                 "texturas_names": [
-                    "vestido1aa",
+                    "vestido1o",
                     "vestido1w",
-                    "vestido1o"
+                    "vestido1aa"
                 ],
                 "malhas": [
                     "pernas_vestido",
@@ -1166,16 +1228,16 @@
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "vestido1aa.png",
-                        "color": "#403020"
+                        "file": "vestido1o.png",
+                        "color": "#101010"
                     },
                     {
                         "file": "vestido1w.png",
                         "color": "#a0b0c0"
                     },
                     {
-                        "file": "vestido1o.png",
-                        "color": "#101010"
+                        "file": "vestido1aa.png",
+                        "color": "#403020"
                     }
                 ]
             }
@@ -1220,32 +1282,6 @@
                     {
                         "file": "fcalca1d.png",
                         "color": "#602030"
-                    }
-                ]
-            },
-            {
-                "id": "short",
-                "dff_id": "20",
-                "name": "SHORT",
-                "status": "pend",
-                "texturas_names": [
-                    "short_t1",
-                    "short_t2"
-                ],
-                "malhas": [
-                    "short"
-                ],
-                "hides": [],
-                "cond_malhas": {},
-                "hide_ui": false,
-                "textures": [
-                    {
-                        "file": "short_t1.png",
-                        "color": "#888888"
-                    },
-                    {
-                        "file": "short_t2.png",
-                        "color": "#888888"
                     }
                 ]
             },
@@ -1375,7 +1411,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["torso", "pernas", "sutia", "calcinha", "face1", "cabelo1", "crop_top", "calca"]);
+        const activeItems = new Set(["torso", "pernas", "sutia", "calcinha", "face1", "cabelo1", "regata", "calca"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1415,7 +1451,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 71;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">71%</div>                </div>
+                                        <div class="circular-progress" style="--prog: 76;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">76%</div>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 

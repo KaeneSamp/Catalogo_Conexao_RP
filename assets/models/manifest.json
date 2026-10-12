@@ -44,22 +44,30 @@
         "texture": "fpernas1a.png"
     },
     "sys_cache_12.dat": {
+        "name": "regata",
+        "texture": "fregatacnl1d.png"
+    },
+    "sys_cache_13.dat": {
+        "name": "torso_regata",
+        "texture": "fbracos1a.png"
+    },
+    "sys_cache_14.dat": {
         "name": "saia_jeans",
         "texture": "saiajeans1h.png"
     },
-    "sys_cache_13.dat": {
+    "sys_cache_15.dat": {
         "name": "calca",
         "texture": "fcalca1a.png"
     },
-    "sys_cache_14.dat": {
+    "sys_cache_16.dat": {
         "name": "pernas_calca",
         "texture": "fpernas1a.png"
     },
-    "sys_cache_15.dat": {
+    "sys_cache_17.dat": {
         "name": "cabelo1",
         "texture": "fcabelo1b.png"
     },
-    "sys_cache_16.dat": {
+    "sys_cache_18.dat": {
         "name": "cabelo2",
         "texture": "fcabelo2b.png"
     }
