@@ -962,7 +962,7 @@
                         if (item.cond_malhas) {
                             for (const req in item.cond_malhas) {
                                 if (meshesToShow.has(req)) {
-                                                                        meshesToShow.delete(req);
+                                    meshesToShow.delete(req);
                                     meshesToShow.add(item.cond_malhas[req]);
                                     window.currentMeshSwaps[req] = item.cond_malhas[req]; // Record swap
                                     const swapDiv = document.getElementById(`ui-item-${item.cond_malhas[req]}`);
@@ -978,6 +978,13 @@
                 });
             }
             
+            // Regra Especial de Otimização: Calça + All Star oculta qualquer perna
+            if (activeItems.has('calca') && activeItems.has('allstar')) {
+                meshesToHide.add('pernas');
+                meshesToHide.add('pernas_calca');
+                meshesToHide.add('pernas_allstar');
+            }
+
             meshesToHide.forEach(m => meshesToShow.delete(m));
             
 
@@ -1058,7 +1065,7 @@
                             if (itm.textures && itm.textures.length > 0) {
                                 // Especial para cilios: usar a textura fixa dos cilios
                                 if (info.name.startsWith('cilios')) {
-                                    initialTex = 'fcilios1a.png';
+                                    initialTex = 'fcilhos1a.png';
                                 } else {
                                     const firstAvail = itm.textures.find(t => t.disponivel !== false);
                                     initialTex = firstAvail ? firstAvail.file : itm.textures[0].file;
@@ -1351,7 +1358,7 @@
             }
             if (info && info.itemData.textures) {
                 info.itemData.currentTexIndex = texIndex;
-            const skinIds = new Set(["face021", "torso", "pernas", "pernas_calca", "torso_blusa", "pernas_shorts", "face1", "face2", "face3"]);
+            const skinIds = new Set(["face021", "torso", "pernas", "pernas_calca", "pernas_allstar", "pernas_vestido", "torso_blusa", "torso_regata", "torso_crop_top", "torso_vestido", "pernas_shorts", "face1", "face2", "face3"]);
             
             if (skinIds.has(meshId)) {
                 skinIds.forEach(id => {
@@ -1371,7 +1378,7 @@
                             const stexData = skinInfo.itemData.textures[texIndex];
                             let imgFile = stexData.file;
                             if (targetSkinMesh.startsWith('cilios')) {
-                                imgFile = 'fcilios1a.png';
+                                imgFile = 'fcilhos1a.png';
                             }
                             textureLoader.load('assets/img/' + imgFile, (tex) => {
                                 tex.encoding = THREE.sRGBEncoding || 3001;

@@ -70,5 +70,17 @@
     "sys_cache_18.dat": {
         "name": "cabelo2",
         "texture": "fcabelo2b.png"
+    },
+    "sys_cache_19.dat": {
+        "name": "chinelo",
+        "texture": "fchinelof1b.png"
+    },
+    "sys_cache_20.dat": {
+        "name": "allstar",
+        "texture": "allstar1al.png"
+    },
+    "sys_cache_21.dat": {
+        "name": "pernas_allstar",
+        "texture": "fpernas1a.png"
     }
 }

@@ -53,14 +53,21 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": true,
-              "dff_id": "07",
-              "malhas": [
-                "pernas"
-              ],
-              "hides": [],
-              "triangulos": [
-                4520
-              ]
+              "dff_id": "07"
+            },
+            {
+              "id": "pernas_allstar",
+              "nome": "PERNAS (ALL STAR)",
+              "texturas": {
+                "fpernas1a": "#b08060",
+                "fpernas1b": "#888888",
+                "fpernas1c": "#888888"
+              },
+              "obs": "Base",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "01"
             },
             {
               "id": "sutia",
@@ -354,40 +361,31 @@
           "resumo_texturas": "A definir",
           "itens": [
             {
-              "id": "tênis",
-              "nome": "TÊNIS",
+              "id": "allstar",
+              "nome": "ALL STAR",
               "texturas": {
-                "tenis_t1": "#888888",
-                "tenis_t2": "#888888"
+                "allstar1a": "#e0e0e0",
+                "allstar1aa": "#b04c76",
+                "allstar1bb": "#404040"
               },
-              "obs": "Fechado",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false,
-              "dff_id": "15",
-              "malhas": [
-                "tênis"
-              ],
-              "hides": [],
-              "triangulos": []
+              "obs": "3 Cores",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true,
+              "dff_id": "15"
             },
             {
-              "id": "sandália__chinelo",
-              "nome": "SANDÁLIA / CHINELO",
+              "id": "chinelo",
+              "nome": "CHINELO FLORIDO",
               "texturas": {
-                "sandalia_t1": "#888888",
-                "sandalia_t2": "#888888"
+                "fchinelof1a": "#c07d52",
+                "fchinelof1b": "#101010"
               },
-              "obs": "Aberto",
-              "concluido": false,
-              "status": "pend",
+              "obs": "Florido",
+              "concluido": true,
+              "status": "done",
               "visivel_padrao": false,
-              "dff_id": "16",
-              "malhas": [
-                "sandália__chinelo"
-              ],
-              "hides": [],
-              "triangulos": []
+              "dff_id": "16"
             }
           ]
         },

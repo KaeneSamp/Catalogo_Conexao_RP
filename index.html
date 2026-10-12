@@ -657,7 +657,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 71;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">71%</div>                </div>
+                <div class="circular-progress" style="--prog: 81;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">81%</div>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -762,9 +762,39 @@
                     "fpernas1b",
                     "fpernas1c"
                 ],
-                "malhas": [
-                    "pernas"
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": false,
+                "textures": [
+                    {
+                        "file": "fpernas1a.png",
+                        "color": "#b08060",
+                        "disponivel": true
+                    },
+                    {
+                        "file": "fpernas1b.png",
+                        "color": "#888888",
+                        "disponivel": false
+                    },
+                    {
+                        "file": "fpernas1c.png",
+                        "color": "#888888",
+                        "disponivel": false
+                    }
+                ]
+            },
+            {
+                "id": "pernas_allstar",
+                "dff_id": "01",
+                "name": "PERNAS (ALL STAR)",
+                "status": "done",
+                "texturas_names": [
+                    "fpernas1a",
+                    "fpernas1b",
+                    "fpernas1c"
                 ],
+                "malhas": [],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
@@ -1390,58 +1420,62 @@
         "exclusive": true,
         "items": [
             {
-                "id": "tênis",
+                "id": "allstar",
                 "dff_id": "15",
-                "name": "TÊNIS",
-                "status": "pend",
+                "name": "ALL STAR",
+                "status": "done",
                 "texturas_names": [
-                    "tenis_t1",
-                    "tenis_t2"
+                    "allstar1a",
+                    "allstar1aa",
+                    "allstar1bb"
                 ],
-                "malhas": [
-                    "tênis"
-                ],
+                "malhas": [],
                 "hides": [],
-                "cond_malhas": {},
+                "cond_malhas": {
+                    "pernas": "pernas_allstar"
+                },
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "tenis_t1.png",
-                        "color": "#888888",
-                        "disponivel": false
+                        "file": "allstar1a.png",
+                        "color": "#e0e0e0",
+                        "disponivel": true
                     },
                     {
-                        "file": "tenis_t2.png",
-                        "color": "#888888",
-                        "disponivel": false
+                        "file": "allstar1aa.png",
+                        "color": "#b04c76",
+                        "disponivel": true
+                    },
+                    {
+                        "file": "allstar1bb.png",
+                        "color": "#404040",
+                        "disponivel": true
                     }
                 ]
             },
             {
-                "id": "sandália__chinelo",
+                "id": "chinelo",
                 "dff_id": "16",
-                "name": "SANDÁLIA / CHINELO",
-                "status": "pend",
+                "name": "CHINELO FLORIDO",
+                "status": "done",
                 "texturas_names": [
-                    "sandalia_t1",
-                    "sandalia_t2"
+                    "fchinelof1a",
+                    "fchinelof1b"
                 ],
-                "malhas": [
-                    "sandália__chinelo"
-                ],
+                "malhas": [],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "sandalia_t1.png",
-                        "color": "#888888",
-                        "disponivel": false
+                        "file": "fchinelof1a.png",
+                        "color": "#c07d52",
+                        "disponivel": true
                     },
                     {
-                        "file": "sandalia_t2.png",
-                        "color": "#888888",
-                        "disponivel": false
+                        "file": "fchinelof1b.png",
+                        "color": "#101010",
+                        "disponivel": true
                     }
                 ]
             }
@@ -1484,7 +1518,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["torso", "pernas", "sutia", "calcinha", "cilios1", "face1", "cabelo1", "regata", "calca"]);
+        const activeItems = new Set(["torso", "pernas", "sutia", "calcinha", "cilios1", "face1", "cabelo1", "regata", "calca", "allstar"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1524,7 +1558,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 71;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">71%</div>                </div>
+                                        <div class="circular-progress" style="--prog: 81;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">81%</div>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 
@@ -1792,7 +1826,7 @@
                         if (item.cond_malhas) {
                             for (const req in item.cond_malhas) {
                                 if (meshesToShow.has(req)) {
-                                                                        meshesToShow.delete(req);
+                                    meshesToShow.delete(req);
                                     meshesToShow.add(item.cond_malhas[req]);
                                     window.currentMeshSwaps[req] = item.cond_malhas[req]; // Record swap
                                     const swapDiv = document.getElementById(`ui-item-${item.cond_malhas[req]}`);
@@ -1808,6 +1842,13 @@
                 });
             }
             
+            // Regra Especial de Otimização: Calça + All Star oculta qualquer perna
+            if (activeItems.has('calca') && activeItems.has('allstar')) {
+                meshesToHide.add('pernas');
+                meshesToHide.add('pernas_calca');
+                meshesToHide.add('pernas_allstar');
+            }
+
             meshesToHide.forEach(m => meshesToShow.delete(m));
             
 
@@ -1888,7 +1929,7 @@
                             if (itm.textures && itm.textures.length > 0) {
                                 // Especial para cilios: usar a textura fixa dos cilios
                                 if (info.name.startsWith('cilios')) {
-                                    initialTex = 'fcilios1a.png';
+                                    initialTex = 'fcilhos1a.png';
                                 } else {
                                     const firstAvail = itm.textures.find(t => t.disponivel !== false);
                                     initialTex = firstAvail ? firstAvail.file : itm.textures[0].file;
@@ -2181,7 +2222,7 @@
             }
             if (info && info.itemData.textures) {
                 info.itemData.currentTexIndex = texIndex;
-            const skinIds = new Set(["face021", "torso", "pernas", "pernas_calca", "torso_blusa", "pernas_shorts", "face1", "face2", "face3"]);
+            const skinIds = new Set(["face021", "torso", "pernas", "pernas_calca", "pernas_allstar", "pernas_vestido", "torso_blusa", "torso_regata", "torso_crop_top", "torso_vestido", "pernas_shorts", "face1", "face2", "face3"]);
             
             if (skinIds.has(meshId)) {
                 skinIds.forEach(id => {
@@ -2201,7 +2242,7 @@
                             const stexData = skinInfo.itemData.textures[texIndex];
                             let imgFile = stexData.file;
                             if (targetSkinMesh.startsWith('cilios')) {
-                                imgFile = 'fcilios1a.png';
+                                imgFile = 'fcilhos1a.png';
                             }
                             textureLoader.load('assets/img/' + imgFile, (tex) => {
                                 tex.encoding = THREE.sRGBEncoding || 3001;

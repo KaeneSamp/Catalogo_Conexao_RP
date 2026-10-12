@@ -336,6 +336,13 @@ def gerar_md(dados):
                     swap_dff = id_map.get(swap, swap)
                     swaps.append(f"Se ID `{req_dff}` -> Usar ID `{swap_dff}`")
                     
+            if item.get('id') == 'allstar':
+                calca_id = id_map.get('calca', '18')
+                swaps.append(f"Com ID `{calca_id}` (Calça) -> Ocultar Pernas")
+            elif item.get('id') == 'calca':
+                allstar_id = id_map.get('allstar', '15')
+                swaps.append(f"Com ID `{allstar_id}` (All Star) -> Ocultar Pernas")
+                    
             if item.get('malhas'):
                 for m in item.get('malhas', []):
                     req_dff = id_map.get(m, m)
