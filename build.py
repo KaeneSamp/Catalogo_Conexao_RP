@@ -158,11 +158,28 @@ def gerar_html(dados):
     pricing_masc = get_pricing_html(skin_masc, dados).replace("`", "\\`") if skin_masc else ""
     pricing_fem = get_pricing_html(skin_fem, dados).replace("`", "\\`") if skin_fem else ""
 
+    img_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'img') if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'img')) else 'assets/img'
+    existing_imgs = set(os.listdir(img_dir)) if os.path.exists(img_dir) else set()
+
     def calc_prog(skin):
         if not skin: return "0"
         total = sum(len(g.get('itens', [])) for g in skin.get('grupos', []))
-        done = sum(1 for g in skin.get('grupos', []) for i in g.get('itens', []) if i.get('concluido', False))
-        return str(round((done / total * 100))) if total > 0 else "0"
+        if total == 0: return "0"
+        done_score = 0.0
+        for g in skin.get('grupos', []):
+            for i in g.get('itens', []):
+                if not i.get('concluido', False):
+                    continue
+                texs = i.get('texturas')
+                if isinstance(texs, dict) and len(texs) > 0:
+                    tex_total = len(texs)
+                    tex_done = sum(1 for k in texs.keys() if f"{k}.png" in existing_imgs)
+                    # 50% pela modelagem/malha pronta + 50% proporcional as texturas prontas
+                    item_score = 0.5 + 0.5 * (tex_done / tex_total)
+                    done_score += item_score
+                else:
+                    done_score += 1.0
+        return str(round((done_score / total * 100)))
 
     prog_masc = calc_prog(skin_masc)
     prog_fem = calc_prog(skin_fem)
@@ -246,7 +263,15 @@ def gerar_html(dados):
                     active_items.append(logic_item["id"])
                     
                 if 'texturas' in item and isinstance(item['texturas'], dict) and len(item['texturas']) > 0:
-                    logic_item['textures'] = [{"file": k + ".png", "color": v} for k, v in item['texturas'].items()]
+                    logic_item['textures'] = []
+                    for k, v in item['texturas'].items():
+                        tex_file = k + ".png"
+                        is_present = tex_file in existing_imgs
+                        logic_item['textures'].append({
+                            "file": tex_file,
+                            "color": v,
+                            "disponivel": is_present
+                        })
                     
                 logic_obj[group_name]["items"].append(logic_item)
                 

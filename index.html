@@ -413,7 +413,18 @@
         }
         .swatch:hover { transform: scale(1.2); }
         .swatch.active { border-color: #fff; transform: scale(1.2); box-shadow: 0 0 8px rgba(255,255,255,0.4); }
-
+        .swatch.disabled {
+            cursor: not-allowed !important;
+            opacity: 0.35;
+            border: 1px dashed rgba(255, 255, 255, 0.5) !important;
+            transform: none !important;
+            box-shadow: none !important;
+            position: relative;
+        }
+        .swatch.disabled:hover {
+            transform: none !important;
+            border-color: rgba(255, 255, 255, 0.6) !important;
+        }
     
         .mesh-hud {
             position: absolute;
@@ -646,7 +657,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 76;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">76%</div>                </div>
+                <div class="circular-progress" style="--prog: 71;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">71%</div>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -726,15 +737,18 @@
                 "textures": [
                     {
                         "file": "fbracos1a.png",
-                        "color": "#b08060"
+                        "color": "#b08060",
+                        "disponivel": true
                     },
                     {
                         "file": "fbracos1b.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "fbracos1c.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             },
@@ -757,15 +771,18 @@
                 "textures": [
                     {
                         "file": "fpernas1a.png",
-                        "color": "#b08060"
+                        "color": "#b08060",
+                        "disponivel": true
                     },
                     {
                         "file": "fpernas1b.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "fpernas1c.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             },
@@ -788,15 +805,18 @@
                 "textures": [
                     {
                         "file": "biquini1b.png",
-                        "color": "#101010"
+                        "color": "#101010",
+                        "disponivel": true
                     },
                     {
                         "file": "biquini1a.png",
-                        "color": "#b0b0b0"
+                        "color": "#b0b0b0",
+                        "disponivel": true
                     },
                     {
                         "file": "biquini1c.png",
-                        "color": "#a02020"
+                        "color": "#a02020",
+                        "disponivel": true
                     }
                 ]
             },
@@ -819,15 +839,18 @@
                 "textures": [
                     {
                         "file": "biquini1b.png",
-                        "color": "#101010"
+                        "color": "#101010",
+                        "disponivel": true
                     },
                     {
                         "file": "biquini1a.png",
-                        "color": "#b0b0b0"
+                        "color": "#b0b0b0",
+                        "disponivel": true
                     },
                     {
                         "file": "biquini1c.png",
-                        "color": "#a02020"
+                        "color": "#a02020",
+                        "disponivel": true
                     }
                 ]
             },
@@ -848,7 +871,8 @@
                 "textures": [
                     {
                         "file": "fcilhos1a.png",
-                        "color": "#000000"
+                        "color": "#000000",
+                        "disponivel": true
                     }
                 ]
             },
@@ -869,15 +893,18 @@
                 "textures": [
                     {
                         "file": "fbracos1a.png",
-                        "color": "#b08060"
+                        "color": "#b08060",
+                        "disponivel": true
                     },
                     {
                         "file": "fbracos1b.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "fbracos1c.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             },
@@ -898,15 +925,18 @@
                 "textures": [
                     {
                         "file": "fbracos1a.png",
-                        "color": "#b08060"
+                        "color": "#b08060",
+                        "disponivel": true
                     },
                     {
                         "file": "fbracos1b.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "fbracos1c.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             },
@@ -927,15 +957,18 @@
                 "textures": [
                     {
                         "file": "fpernas1a.png",
-                        "color": "#b08060"
+                        "color": "#b08060",
+                        "disponivel": true
                     },
                     {
                         "file": "fpernas1b.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "fpernas1c.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             },
@@ -956,15 +989,18 @@
                 "textures": [
                     {
                         "file": "fbracos1a.png",
-                        "color": "#b08060"
+                        "color": "#b08060",
+                        "disponivel": true
                     },
                     {
                         "file": "fbracos1b.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "fbracos1c.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             },
@@ -985,15 +1021,18 @@
                 "textures": [
                     {
                         "file": "fpernas1a.png",
-                        "color": "#b08060"
+                        "color": "#b08060",
+                        "disponivel": true
                     },
                     {
                         "file": "fpernas1b.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "fpernas1c.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             }
@@ -1023,15 +1062,18 @@
                 "textures": [
                     {
                         "file": "ffacek1a.png",
-                        "color": "#b08060"
+                        "color": "#b08060",
+                        "disponivel": true
                     },
                     {
                         "file": "ffacek1b.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "ffacek1c.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             },
@@ -1054,15 +1096,18 @@
                 "textures": [
                     {
                         "file": "rosto2_t1.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "rosto2_t2.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "rosto2_t3.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             }
@@ -1091,15 +1136,18 @@
                 "textures": [
                     {
                         "file": "fcabelo1c.png",
-                        "color": "#201010"
+                        "color": "#201010",
+                        "disponivel": true
                     },
                     {
                         "file": "fcabelo1b.png",
-                        "color": "#b09060"
+                        "color": "#b09060",
+                        "disponivel": true
                     },
                     {
                         "file": "fcabelo1a.png",
-                        "color": "#000000"
+                        "color": "#000000",
+                        "disponivel": true
                     }
                 ]
             },
@@ -1122,15 +1170,18 @@
                 "textures": [
                     {
                         "file": "fcabelo2a.png",
-                        "color": "#000000"
+                        "color": "#000000",
+                        "disponivel": true
                     },
                     {
                         "file": "fcabelo2b.png",
-                        "color": "#b09060"
+                        "color": "#b09060",
+                        "disponivel": true
                     },
                     {
                         "file": "fcabelo2c.png",
-                        "color": "#201010"
+                        "color": "#201010",
+                        "disponivel": true
                     }
                 ]
             }
@@ -1161,15 +1212,18 @@
                 "textures": [
                     {
                         "file": "fregatacnl1m.png",
-                        "color": "#202020"
+                        "color": "#202020",
+                        "disponivel": true
                     },
                     {
                         "file": "fregatacnl1c.png",
-                        "color": "#a0b0c0"
+                        "color": "#a0b0c0",
+                        "disponivel": true
                     },
                     {
                         "file": "fregatacnl1d.png",
-                        "color": "#802020"
+                        "color": "#802020",
+                        "disponivel": true
                     }
                 ]
             },
@@ -1194,15 +1248,18 @@
                 "textures": [
                     {
                         "file": "croptop1h.png",
-                        "color": "#202020"
+                        "color": "#202020",
+                        "disponivel": true
                     },
                     {
                         "file": "croptop1c.png",
-                        "color": "#a0b0c0"
+                        "color": "#a0b0c0",
+                        "disponivel": true
                     },
                     {
                         "file": "croptop1o.png",
-                        "color": "#f070a0"
+                        "color": "#f070a0",
+                        "disponivel": true
                     }
                 ]
             },
@@ -1229,15 +1286,18 @@
                 "textures": [
                     {
                         "file": "vestido1o.png",
-                        "color": "#101010"
+                        "color": "#101010",
+                        "disponivel": true
                     },
                     {
                         "file": "vestido1w.png",
-                        "color": "#a0b0c0"
+                        "color": "#a0b0c0",
+                        "disponivel": true
                     },
                     {
                         "file": "vestido1aa.png",
-                        "color": "#403020"
+                        "color": "#403020",
+                        "disponivel": true
                     }
                 ]
             }
@@ -1269,19 +1329,23 @@
                 "textures": [
                     {
                         "file": "fcalca1a.png",
-                        "color": "#808080"
+                        "color": "#808080",
+                        "disponivel": true
                     },
                     {
                         "file": "fcalca1b.png",
-                        "color": "#101010"
+                        "color": "#101010",
+                        "disponivel": true
                     },
                     {
                         "file": "fcalca1c.png",
-                        "color": "#405060"
+                        "color": "#405060",
+                        "disponivel": true
                     },
                     {
                         "file": "fcalca1d.png",
-                        "color": "#602030"
+                        "color": "#602030",
+                        "disponivel": true
                     }
                 ]
             },
@@ -1304,15 +1368,18 @@
                 "textures": [
                     {
                         "file": "saiajeans1h.png",
-                        "color": "#b0c0d0"
+                        "color": "#b0c0d0",
+                        "disponivel": true
                     },
                     {
                         "file": "saiajeans1g.png",
-                        "color": "#304070"
+                        "color": "#304070",
+                        "disponivel": true
                     },
                     {
                         "file": "saiajeans1q.png",
-                        "color": "#202020"
+                        "color": "#202020",
+                        "disponivel": true
                     }
                 ]
             }
@@ -1340,11 +1407,13 @@
                 "textures": [
                     {
                         "file": "tenis_t1.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "tenis_t2.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             },
@@ -1366,11 +1435,13 @@
                 "textures": [
                     {
                         "file": "sandalia_t1.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "sandalia_t2.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             }
@@ -1398,11 +1469,13 @@
                 "textures": [
                     {
                         "file": "acessorio_t1.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     },
                     {
                         "file": "acessorio_t2.png",
-                        "color": "#888888"
+                        "color": "#888888",
+                        "disponivel": false
                     }
                 ]
             }
@@ -1451,7 +1524,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 76;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">76%</div>                </div>
+                                        <div class="circular-progress" style="--prog: 71;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">71%</div>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 
@@ -1538,16 +1611,21 @@
                         <div class="item-info">
                             <span class="item-title">${item.name}</span>
                             <span class="item-subtitle">Texturas: ${item.texturas_names && item.texturas_names.length ? item.texturas_names.join(", ") : "Nenhuma"}</span>
-                            ${item.textures ? `
+                            ${item.textures ? (() => {
+                                const initIdx = item.textures.findIndex(t => t.disponivel !== false);
+                                const defaultIdx = initIdx !== -1 ? initIdx : 0;
+                                return `
                                 <div class="texture-swatches">
                                     ${item.textures.map((tex, idx) => `
-                                        <button id="swatch-${item.id}-${idx}" class="swatch ${idx === 0 ? 'active' : ''}" 
+                                        <button id="swatch-${item.id}-${idx}" class="swatch ${tex.disponivel === false ? 'disabled' : (idx === defaultIdx ? 'active' : '')}" 
                                                 style="background: ${tex.color}" 
+                                                title="${tex.disponivel === false ? 'Textura pendente (arquivo ausente)' : (tex.file || '')}"
                                                 onclick="event.stopPropagation(); window.changeTextureLogic('${item.id}', ${idx})">
                                         </button>
                                     `).join('')}
                                 </div>
-                            ` : ''}
+                                `;
+                            })() : ''}
                         </div>
                         <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
                             ${badge}
@@ -1812,7 +1890,8 @@
                                 if (info.name.startsWith('cilios')) {
                                     initialTex = 'fcilios1a.png';
                                 } else {
-                                    initialTex = itm.textures[0].file;
+                                    const firstAvail = itm.textures.find(t => t.disponivel !== false);
+                                    initialTex = firstAvail ? firstAvail.file : itm.textures[0].file;
                                 }
                             }
                         }
@@ -1928,8 +2007,9 @@
         for (const [groupName, groupData] of Object.entries(logicConfig)) {
             groupData.items.forEach((item, index) => {
                 meshToGroup[item.id] = { groupName, groupData, itemData: item, indexInGroup: index };
-                if (item.textures) {
-                    item.currentTexIndex = 0; 
+                if (item.textures && item.textures.length > 0) {
+                    const firstAvail = item.textures.findIndex(t => t.disponivel !== false);
+                    item.currentTexIndex = firstAvail !== -1 ? firstAvail : 0; 
                 }
             });
         }
@@ -1973,9 +2053,12 @@
                         html += `<div style="font-size: 0.7rem; color: #aaa; margin-top: 5px;"><strong>BOTÃO DIREITO</strong> p/ cor</div>`;
                         html += `<div class="texture-swatches">`;
                         info.itemData.textures.forEach((tex, idx) => {
-                            const isActive = info.itemData.currentTexIndex === idx;
-                            html += `<button class="swatch ${isActive ? 'active' : ''}" 
+                            const isDisab = tex.disponivel === false;
+                            const isActive = !isDisab && info.itemData.currentTexIndex === idx;
+                            const cls = `swatch ${isDisab ? 'disabled' : ''} ${isActive ? 'active' : ''}`.trim();
+                            html += `<button class="${cls}" 
                                       style="background: ${tex.color}" 
+                                      title="${isDisab ? 'Textura pendente (arquivo ausente)' : (tex.file || '')}"
                                       onclick="event.stopPropagation(); window.changeTextureLogic('${meshName}', ${idx})">
                                      </button>`;
                         });
@@ -2063,7 +2146,7 @@
             const intersects = raycaster.intersectObjects(modelGroup.children).filter(i => i.object.visible);
             
             if (intersects.length > 0) {
-                                let clickedMeshName = intersects[0].object.name;
+                let clickedMeshName = intersects[0].object.name;
                 // RESOLVE SWAP
                 for (const k in window.currentMeshSwaps) {
                     if (window.currentMeshSwaps[k] === clickedMeshName) {
@@ -2073,9 +2156,18 @@
                 }
                 const info = meshToGroup[clickedMeshName];
                 
-                if (info && info.itemData.textures) {
-                    const nextTexIdx = (info.itemData.currentTexIndex + 1) % info.itemData.textures.length;
-                    window.changeTextureLogic(clickedMeshName, nextTexIdx);
+                if (info && info.itemData.textures && info.itemData.textures.length > 0) {
+                    // Pular texturas que não estão prontas/disponíveis
+                    const texList = info.itemData.textures;
+                    let nextIdx = (info.itemData.currentTexIndex + 1) % texList.length;
+                    let attempts = 0;
+                    while (texList[nextIdx].disponivel === false && attempts < texList.length) {
+                        nextIdx = (nextIdx + 1) % texList.length;
+                        attempts++;
+                    }
+                    if (texList[nextIdx].disponivel !== false && nextIdx !== info.itemData.currentTexIndex) {
+                        window.changeTextureLogic(clickedMeshName, nextIdx);
+                    }
                 }
             }
         });
@@ -2083,6 +2175,10 @@
         // FUNÇÃO UNIFICADA: Troca Textura e Sincroniza UI
         window.changeTextureLogic = function(meshId, texIndex) {
             const info = meshToGroup[meshId];
+            if (!info || !info.itemData.textures) return;
+            if (info.itemData.textures[texIndex] && info.itemData.textures[texIndex].disponivel === false) {
+                return; // Bloqueia clique em textura não concluída / ausente
+            }
             if (info && info.itemData.textures) {
                 info.itemData.currentTexIndex = texIndex;
             const skinIds = new Set(["face021", "torso", "pernas", "pernas_calca", "torso_blusa", "pernas_shorts", "face1", "face2", "face3"]);

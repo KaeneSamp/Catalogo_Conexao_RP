@@ -413,7 +413,18 @@
         }
         .swatch:hover { transform: scale(1.2); }
         .swatch.active { border-color: #fff; transform: scale(1.2); box-shadow: 0 0 8px rgba(255,255,255,0.4); }
-
+        .swatch.disabled {
+            cursor: not-allowed !important;
+            opacity: 0.35;
+            border: 1px dashed rgba(255, 255, 255, 0.5) !important;
+            transform: none !important;
+            box-shadow: none !important;
+            position: relative;
+        }
+        .swatch.disabled:hover {
+            transform: none !important;
+            border-color: rgba(255, 255, 255, 0.6) !important;
+        }
     
         .mesh-hud {
             position: absolute;
@@ -770,16 +781,21 @@
                         <div class="item-info">
                             <span class="item-title">${item.name}</span>
                             <span class="item-subtitle">Texturas: ${item.texturas_names && item.texturas_names.length ? item.texturas_names.join(", ") : "Nenhuma"}</span>
-                            ${item.textures ? `
+                            ${item.textures ? (() => {
+                                const initIdx = item.textures.findIndex(t => t.disponivel !== false);
+                                const defaultIdx = initIdx !== -1 ? initIdx : 0;
+                                return `
                                 <div class="texture-swatches">
                                     ${item.textures.map((tex, idx) => `
-                                        <button id="swatch-${item.id}-${idx}" class="swatch ${idx === 0 ? 'active' : ''}" 
+                                        <button id="swatch-${item.id}-${idx}" class="swatch ${tex.disponivel === false ? 'disabled' : (idx === defaultIdx ? 'active' : '')}" 
                                                 style="background: ${tex.color}" 
+                                                title="${tex.disponivel === false ? 'Textura pendente (arquivo ausente)' : (tex.file || '')}"
                                                 onclick="event.stopPropagation(); window.changeTextureLogic('${item.id}', ${idx})">
                                         </button>
                                     `).join('')}
                                 </div>
-                            ` : ''}
+                                `;
+                            })() : ''}
                         </div>
                         <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
                             ${badge}
@@ -1044,7 +1060,8 @@
                                 if (info.name.startsWith('cilios')) {
                                     initialTex = 'fcilios1a.png';
                                 } else {
-                                    initialTex = itm.textures[0].file;
+                                    const firstAvail = itm.textures.find(t => t.disponivel !== false);
+                                    initialTex = firstAvail ? firstAvail.file : itm.textures[0].file;
                                 }
                             }
                         }
@@ -1160,8 +1177,9 @@
         for (const [groupName, groupData] of Object.entries(logicConfig)) {
             groupData.items.forEach((item, index) => {
                 meshToGroup[item.id] = { groupName, groupData, itemData: item, indexInGroup: index };
-                if (item.textures) {
-                    item.currentTexIndex = 0; 
+                if (item.textures && item.textures.length > 0) {
+                    const firstAvail = item.textures.findIndex(t => t.disponivel !== false);
+                    item.currentTexIndex = firstAvail !== -1 ? firstAvail : 0; 
                 }
             });
         }
@@ -1205,9 +1223,12 @@
                         html += `<div style="font-size: 0.7rem; color: #aaa; margin-top: 5px;"><strong>BOTÃO DIREITO</strong> p/ cor</div>`;
                         html += `<div class="texture-swatches">`;
                         info.itemData.textures.forEach((tex, idx) => {
-                            const isActive = info.itemData.currentTexIndex === idx;
-                            html += `<button class="swatch ${isActive ? 'active' : ''}" 
+                            const isDisab = tex.disponivel === false;
+                            const isActive = !isDisab && info.itemData.currentTexIndex === idx;
+                            const cls = `swatch ${isDisab ? 'disabled' : ''} ${isActive ? 'active' : ''}`.trim();
+                            html += `<button class="${cls}" 
                                       style="background: ${tex.color}" 
+                                      title="${isDisab ? 'Textura pendente (arquivo ausente)' : (tex.file || '')}"
                                       onclick="event.stopPropagation(); window.changeTextureLogic('${meshName}', ${idx})">
                                      </button>`;
                         });
@@ -1295,7 +1316,7 @@
             const intersects = raycaster.intersectObjects(modelGroup.children).filter(i => i.object.visible);
             
             if (intersects.length > 0) {
-                                let clickedMeshName = intersects[0].object.name;
+                let clickedMeshName = intersects[0].object.name;
                 // RESOLVE SWAP
                 for (const k in window.currentMeshSwaps) {
                     if (window.currentMeshSwaps[k] === clickedMeshName) {
@@ -1305,9 +1326,18 @@
                 }
                 const info = meshToGroup[clickedMeshName];
                 
-                if (info && info.itemData.textures) {
-                    const nextTexIdx = (info.itemData.currentTexIndex + 1) % info.itemData.textures.length;
-                    window.changeTextureLogic(clickedMeshName, nextTexIdx);
+                if (info && info.itemData.textures && info.itemData.textures.length > 0) {
+                    // Pular texturas que não estão prontas/disponíveis
+                    const texList = info.itemData.textures;
+                    let nextIdx = (info.itemData.currentTexIndex + 1) % texList.length;
+                    let attempts = 0;
+                    while (texList[nextIdx].disponivel === false && attempts < texList.length) {
+                        nextIdx = (nextIdx + 1) % texList.length;
+                        attempts++;
+                    }
+                    if (texList[nextIdx].disponivel !== false && nextIdx !== info.itemData.currentTexIndex) {
+                        window.changeTextureLogic(clickedMeshName, nextIdx);
+                    }
                 }
             }
         });
@@ -1315,6 +1345,10 @@
         // FUNÇÃO UNIFICADA: Troca Textura e Sincroniza UI
         window.changeTextureLogic = function(meshId, texIndex) {
             const info = meshToGroup[meshId];
+            if (!info || !info.itemData.textures) return;
+            if (info.itemData.textures[texIndex] && info.itemData.textures[texIndex].disponivel === false) {
+                return; // Bloqueia clique em textura não concluída / ausente
+            }
             if (info && info.itemData.textures) {
                 info.itemData.currentTexIndex = texIndex;
             const skinIds = new Set(["face021", "torso", "pernas", "pernas_calca", "torso_blusa", "pernas_shorts", "face1", "face2", "face3"]);
