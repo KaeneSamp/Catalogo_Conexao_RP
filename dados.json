@@ -16,8 +16,8 @@
         {
           "id": "corpo",
           "exclusive": false,
-          "titulo": "🙇‍♀️ Corpo",
-          "emoji": "🙇‍♀️",
+          "titulo": "👙 Corpo",
+          "emoji": "👙",
           "resumo_texturas": "Malha Base",
           "itens": [
             {
@@ -179,8 +179,8 @@
         {
           "id": "cabelos",
           "exclusive": true,
-          "titulo": "💇‍♀️ Cabelos",
-          "emoji": "💇‍♀️",
+          "titulo": "👩‍🦰 Cabelos",
+          "emoji": "👩‍🦰",
           "resumo_texturas": "3 Cores",
           "itens": [
             {
