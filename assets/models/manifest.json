@@ -1,86 +1,98 @@
 {
     "sys_cache_01.dat": {
-        "name": "face1",
-        "texture": "ffacek1a.png"
-    },
-    "sys_cache_02.dat": {
-        "name": "cilios1",
-        "texture": "fcilios1a.png"
-    },
-    "sys_cache_03.dat": {
         "name": "torso",
         "texture": "fbracos1a.png"
     },
-    "sys_cache_04.dat": {
+    "sys_cache_02.dat": {
         "name": "pernas",
         "texture": "fpernas1a.png"
     },
+    "sys_cache_03.dat": {
+        "name": "cilios1",
+        "texture": "fcilios1a.png"
+    },
+    "sys_cache_04.dat": {
+        "name": "face1",
+        "texture": "ffacek1a.png"
+    },
     "sys_cache_05.dat": {
+        "name": "cilios2",
+        "texture": "fcilios1a.png"
+    },
+    "sys_cache_06.dat": {
+        "name": "face2",
+        "texture": "ffacek2a.png"
+    },
+    "sys_cache_07.dat": {
         "name": "sutia",
         "texture": "biquini1b.png"
     },
-    "sys_cache_06.dat": {
+    "sys_cache_08.dat": {
         "name": "calcinha",
         "texture": "biquini1b.png"
     },
-    "sys_cache_07.dat": {
+    "sys_cache_09.dat": {
         "name": "torso_crop_top",
         "texture": "fbracos1a.png"
     },
-    "sys_cache_08.dat": {
+    "sys_cache_10.dat": {
         "name": "crop_top",
         "texture": "croptop1o.png"
     },
-    "sys_cache_09.dat": {
+    "sys_cache_11.dat": {
         "name": "vestido",
         "texture": "vestido1aa.png"
     },
-    "sys_cache_10.dat": {
+    "sys_cache_12.dat": {
         "name": "torso_vestido",
         "texture": "fbracos1a.png"
     },
-    "sys_cache_11.dat": {
+    "sys_cache_13.dat": {
         "name": "pernas_vestido",
         "texture": "fpernas1a.png"
     },
-    "sys_cache_12.dat": {
+    "sys_cache_14.dat": {
         "name": "regata",
         "texture": "fregatacnl1d.png"
     },
-    "sys_cache_13.dat": {
+    "sys_cache_15.dat": {
         "name": "torso_regata",
         "texture": "fbracos1a.png"
     },
-    "sys_cache_14.dat": {
+    "sys_cache_16.dat": {
         "name": "saia_jeans",
         "texture": "saiajeans1h.png"
     },
-    "sys_cache_15.dat": {
+    "sys_cache_17.dat": {
         "name": "calca",
         "texture": "fcalca1a.png"
     },
-    "sys_cache_16.dat": {
+    "sys_cache_18.dat": {
         "name": "pernas_calca",
         "texture": "fpernas1a.png"
     },
-    "sys_cache_17.dat": {
+    "sys_cache_19.dat": {
         "name": "cabelo1",
         "texture": "fcabelo1b.png"
     },
-    "sys_cache_18.dat": {
+    "sys_cache_20.dat": {
         "name": "cabelo2",
         "texture": "fcabelo2b.png"
     },
-    "sys_cache_19.dat": {
+    "sys_cache_21.dat": {
         "name": "chinelo",
         "texture": "fchinelof1b.png"
     },
-    "sys_cache_20.dat": {
+    "sys_cache_22.dat": {
         "name": "allstar",
         "texture": "allstar1a.png"
     },
-    "sys_cache_21.dat": {
+    "sys_cache_23.dat": {
         "name": "pernas_allstar",
         "texture": "fpernas1a.png"
+    },
+    "sys_cache_24.dat": {
+        "name": "mocdragao",
+        "texture": "mochiladrg1a.png"
     }
 }

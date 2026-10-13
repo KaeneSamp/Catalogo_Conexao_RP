@@ -657,7 +657,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 81;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">81%</div>                </div>
+                <div class="circular-progress" style="--prog: 91;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">91%</div>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -890,7 +890,7 @@
                 "name": "CÍLIOS (FACE 1)",
                 "status": "done",
                 "texturas_names": [
-                    "fcilhos1a"
+                    "fcilios1a"
                 ],
                 "malhas": [
                     "cilios1"
@@ -900,7 +900,29 @@
                 "hide_ui": true,
                 "textures": [
                     {
-                        "file": "fcilhos1a.png",
+                        "file": "fcilios1a.png",
+                        "color": "#000000",
+                        "disponivel": true
+                    }
+                ]
+            },
+            {
+                "id": "cilios2",
+                "dff_id": "10",
+                "name": "CÍLIOS (FACE 2)",
+                "status": "done",
+                "texturas_names": [
+                    "fcilios1a"
+                ],
+                "malhas": [
+                    "cilios2"
+                ],
+                "hides": [],
+                "cond_malhas": {},
+                "hide_ui": true,
+                "textures": [
+                    {
+                        "file": "fcilios1a.png",
                         "color": "#000000",
                         "disponivel": true
                     }
@@ -1108,34 +1130,35 @@
                 ]
             },
             {
-                "id": "rosto_2",
+                "id": "face2",
                 "dff_id": "03",
                 "name": "ROSTO 2",
-                "status": "pend",
+                "status": "done",
                 "texturas_names": [
-                    "rosto2_t1",
-                    "rosto2_t2",
-                    "rosto2_t3"
+                    "ffacek2a",
+                    "ffacek2b",
+                    "ffacek2c"
                 ],
                 "malhas": [
-                    "rosto_2"
+                    "face2",
+                    "cilios2"
                 ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "rosto2_t1.png",
+                        "file": "ffacek2a.png",
+                        "color": "#b08060",
+                        "disponivel": true
+                    },
+                    {
+                        "file": "ffacek2b.png",
                         "color": "#888888",
                         "disponivel": false
                     },
                     {
-                        "file": "rosto2_t2.png",
-                        "color": "#888888",
-                        "disponivel": false
-                    },
-                    {
-                        "file": "rosto2_t3.png",
+                        "file": "ffacek2c.png",
                         "color": "#888888",
                         "disponivel": false
                     }
@@ -1481,35 +1504,35 @@
             }
         ]
     },
-    "👒 Acessórios": {
-        "emoji": "👒",
+    "🎒 Mochilas": {
+        "emoji": "🎒",
         "exclusive": true,
         "items": [
             {
-                "id": "boné_ou_mochila",
+                "id": "mocdragao",
                 "dff_id": "24",
-                "name": "BONÉ OU MOCHILA",
-                "status": "pend",
+                "name": "MOCHILA DRAGÃO",
+                "status": "done",
                 "texturas_names": [
-                    "acessorio_t1",
-                    "acessorio_t2"
+                    "mocdragao1a",
+                    "mocdragao1b"
                 ],
                 "malhas": [
-                    "boné_ou_mochila"
+                    "mocdragao"
                 ],
                 "hides": [],
                 "cond_malhas": {},
                 "hide_ui": false,
                 "textures": [
                     {
-                        "file": "acessorio_t1.png",
-                        "color": "#888888",
-                        "disponivel": false
+                        "file": "mocdragao1a.png",
+                        "color": "#202020",
+                        "disponivel": true
                     },
                     {
-                        "file": "acessorio_t2.png",
-                        "color": "#888888",
-                        "disponivel": false
+                        "file": "mocdragao1b.png",
+                        "color": "#a0a0a0",
+                        "disponivel": true
                     }
                 ]
             }
@@ -1518,7 +1541,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["torso", "pernas", "sutia", "calcinha", "cilios1", "face1", "cabelo1", "regata", "calca", "allstar"]);
+        const activeItems = new Set(["torso", "pernas", "sutia", "calcinha", "face2", "cabelo1", "crop_top", "calca", "allstar", "mocdragao"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1558,7 +1581,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 81;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">81%</div>                </div>
+                                        <div class="circular-progress" style="--prog: 91;">                    <svg viewBox="0 0 36 36">                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>                    </svg>                    <div class="circle-text">91%</div>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 
