@@ -5,7 +5,7 @@
     },
     "sys_cache_02.dat": {
         "name": "pernas",
-        "texture": "fpernas1a.png"
+        "texture": "fpernas1b.png"
     },
     "sys_cache_03.dat": {
         "name": "cilios1",
@@ -93,6 +93,6 @@
     },
     "sys_cache_24.dat": {
         "name": "mocdragao",
-        "texture": "mochiladrg1a.png"
+        "texture": null
     }
 }

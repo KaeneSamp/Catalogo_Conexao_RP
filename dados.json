@@ -25,8 +25,8 @@
               "nome": "BRACOS (COMPLETO)",
               "texturas": {
                 "fbracos1a": "#b08060",
-                "fbracos1b": "#888888",
-                "fbracos1c": "#888888"
+                "fbracos1b": "#907050",
+                "fbracos1c": "#604030"
               },
               "obs": "Base",
               "concluido": true,
@@ -46,8 +46,8 @@
               "nome": "PERNAS (COMPLETO)",
               "texturas": {
                 "fpernas1a": "#b08060",
-                "fpernas1b": "#888888",
-                "fpernas1c": "#888888"
+                "fpernas1b": "#907050",
+                "fpernas1c": "#604030"
               },
               "obs": "Base",
               "concluido": true,
@@ -165,7 +165,7 @@
               "nome": "ROSTO 1",
               "texturas": {
                 "ffacek1a": "#b08060",
-                "ffacek1b": "#888888",
+                "ffacek1b": "#907050",
                 "ffacek1c": "#888888"
               },
               "obs": "Base",
@@ -187,7 +187,7 @@
               "nome": "ROSTO 2",
               "texturas": {
                 "ffacek2a": "#b08060",
-                "ffacek2b": "#888888",
+                "ffacek2b": "#907050",
                 "ffacek2c": "#888888"
               },
               "obs": "Base",
