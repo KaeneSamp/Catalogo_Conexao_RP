@@ -1,0 +1,13 @@
+# Blender
+*.blend
+*.blend1
+*.blend2
+@*.blend*
+blender_files/*.blend*
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Backups
+*undo.json
